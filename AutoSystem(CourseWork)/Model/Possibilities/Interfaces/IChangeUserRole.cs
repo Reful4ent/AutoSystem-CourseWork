@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSystem_CourseWork_.Model.Possibilities
+namespace AutoSystem_CourseWork_.Model.Possibilities.Interfaces
 {
     public interface IChangeUserRole
     {
-        public void ChangeUserRole(int Role_Id);
+        public bool ChangeUserRole(int Role_Id);
     }
 }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoSystem_CourseWork_.Model.Possibilities.Interfaces;
 
-namespace AutoSystem_CourseWork_.Model.Possibilities
+namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
     public class CanChangeUserRole : IChangeUserRole
     {
-        public void ChangeUserRole(int Role_Id)
+        public bool ChangeUserRole(int Role_Id)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
