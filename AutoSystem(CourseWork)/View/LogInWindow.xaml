@@ -27,7 +27,10 @@
         </Grid>
 
         <Grid x:Name="Title_Of_App" Grid.Row="1">
-            <TextBlock x:Name="Title_Text" Style="{StaticResource ResourceKey=Title_Text}">NSTU Training</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="Logo" Source="/AutoSystem(CourseWork);component/View/Images/logo.png" Style="{StaticResource ResourceKey=Logo}"></Image>
+                <TextBlock x:Name="Title_Text" Style="{StaticResource ResourceKey=Title_Text}">NSTU Training</TextBlock>
+            </StackPanel>
         </Grid>
 
         <Grid x:Name="Form" Grid.Row="2">
