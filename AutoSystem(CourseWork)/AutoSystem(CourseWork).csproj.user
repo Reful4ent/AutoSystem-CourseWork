@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\LogInWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\RegistrationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LogInWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\LogInStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\RegistrationStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

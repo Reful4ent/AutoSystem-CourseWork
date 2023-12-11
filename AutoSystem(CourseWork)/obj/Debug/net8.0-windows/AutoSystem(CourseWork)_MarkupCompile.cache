@@ -1,5 +1,5 @@
 ﻿AutoSystem(CourseWork)
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\App.xaml
 5787523458
 
-33-1492735074
+31-355122799
 198-688555687
 MainWindow.xaml;View\LogInWindow.xaml;View\RegistrationWindow.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;
 

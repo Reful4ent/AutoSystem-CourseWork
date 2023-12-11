@@ -1,0 +1,8 @@
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\LogInStyles.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\RegistrationStyles.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\LogInWindow.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\RegistrationWindow.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\AutoSystem(CourseWork)_MarkupCompile.cache
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\AutoSystem(CourseWork)_MarkupCompile.lref
