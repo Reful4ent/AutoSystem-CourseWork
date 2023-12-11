@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model.Fabric
 {
-    internal static class MyRole
+    internal class TutorFabric : MyRoleFabric
     {
-        public static MyRoleFabric GetMyRole(int Role_Id) => Role_Id switch
-        {
-
-        };
     }
 }
