@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSystem_CourseWork_.Model.Basic
+namespace AutoSystem_CourseWork_.Model.ForFabric_Roles_
 {
-    public interface IEntity
+    public interface IChooseRole
     {
-        public Guid Id { get; }
     }
 }

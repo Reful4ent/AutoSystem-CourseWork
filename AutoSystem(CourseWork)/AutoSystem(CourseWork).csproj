@@ -9,4 +9,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\UserSerialization\" />
+    <Folder Include="Data\TestOrRoutesSerialization\" />
+    <Folder Include="Model\Possibilities\" />
+    <Folder Include="ViewModel\Commands\" />
+    <Folder Include="ViewModel\DataManager\" />
+    <Folder Include="View\Images\" />
+    <Folder Include="View\ViewStyles\" />
+  </ItemGroup>
+
 </Project>

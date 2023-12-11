@@ -1,0 +1,30 @@
+﻿using AutoSystem_CourseWork_.Model.Basic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AutoSystem_CourseWork_.Model.ForFabric_Roles_;
+using AutoSystem_CourseWork_.Model.Fabric;
+
+namespace AutoSystem_CourseWork_.Model
+{
+    public class User : IEntity
+    {
+        public Guid Id { get; }
+        public string Login { get; }
+        public string Password { get; }
+        public int Role_Id { get; set; }
+        private IChooseRole Role { get; set; }
+
+        public User (Guid Id, string Login, string Password, int Role_Id)
+        {
+            this.Id = Id;
+            this.Login = Login;
+            this.Password = Password;
+            this.Role_Id = Role_Id;
+            MyRoleFabric fabric = MyRole.GetMyRole(this.Role_Id);
+            this.Role = fabric.GetRole();
+        }
+    }
+}
