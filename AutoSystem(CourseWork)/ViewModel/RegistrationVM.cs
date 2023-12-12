@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
-    public class LogInVM : BasicVM
+    internal class RegistrationVM
     {
-
     }
 }
