@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3D++bp3Nj8n2hNx5/Eg774D56BRDf6L08LX8a3n9/A8kLFmLs0CEy59S6Rts2pj0NSxDDusxThm3CoflP9WqQg==",
+  "dgSpecHash": "1BJ/5CFp0IKm5HPGjeVYoi2cuNldVy1sAyGly4OlO1Ukj+wqITjGNFEhzdMyfsoJ1ZvqUqAb2oeJiIcPIbhRJg==",
   "success": true,
   "projectFilePath": "C:\\Users\\dima2\\source\\repos\\AutoSystem(CourseWork)\\AutoSystem(CourseWork)\\AutoSystem(CourseWork).csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\dima2\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

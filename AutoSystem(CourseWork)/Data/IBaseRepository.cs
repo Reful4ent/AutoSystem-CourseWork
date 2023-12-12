@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Data
 {
-    public interface ISerializeBase<T> where T : IEntity
+    public interface IBaseRepository<T> where T : IEntity
     {
         bool Add(T entity);
         bool Delete(T entity);
