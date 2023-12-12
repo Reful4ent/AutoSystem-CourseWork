@@ -51,5 +51,10 @@ namespace AutoSystem_CourseWork_.View
                 Form_Input_Password_TB.Visibility = Visibility.Hidden;
             }
         }
+        private void Form_Input_Password_PB_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            //if (DataContext is EnterVM enterViewModel)
+            //    enterViewModel.Password = Form_Input_Password_PB.Password;
+        }
     }
 }

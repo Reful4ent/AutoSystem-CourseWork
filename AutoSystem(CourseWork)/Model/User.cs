@@ -12,14 +12,17 @@ namespace AutoSystem_CourseWork_.Model
     public class User : IEntity
     {
         public Guid Id { get; }
+        public string Name { get; }
         public string Login { get; }
         public string Password { get; }
+
         public int Role_Id { get; set; }
         private IChooseRole Role { get; set; }
 
-        public User (Guid Id, string Login, string Password, int Role_Id)
+        public User (Guid Id, string Name, string Login, string Password, int Role_Id)
         {
             this.Id = Id;
+            this.Name = Name;
             this.Login = Login;
             this.Password = Password;
             this.Role_Id = Role_Id;

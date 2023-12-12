@@ -10,7 +10,7 @@
     <Window.Resources>
         <ResourceDictionary Source="/AutoSystem(CourseWork);component/View/ViewStyles/LogInStyles.xaml"></ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid Style="{StaticResource ResourceKey=Background_Window}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -45,9 +45,9 @@
                 <RowDefinition Height="50"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="Form_Text_Log" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Login:</TextBlock>
+            <TextBlock x:Name="Form_Text_Log" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Логин:</TextBlock>
             <TextBox x:Name="Form_Input_Login" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Login}" Style="{StaticResource Form_Input_Login}"></TextBox>
-            <TextBlock x:Name="Form_Text_Pass" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Password:</TextBlock>
+            <TextBlock x:Name="Form_Text_Pass" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Пароль:</TextBlock>
             <PasswordBox x:Name="Form_Input_Password_PB" Grid.Row="3" Grid.Column="0" PasswordChanged="Form_Input_Password_PB_PasswordChanged" Style="{StaticResource Form_Input_Password_PB}"/>
             <TextBox x:Name="Form_Input_Password_TB" Grid.Row="3" Grid.Column="0" Visibility="Hidden" Text="{Binding Password}" Style="{StaticResource Form_Input_Password_TB}"></TextBox>
             <StackPanel Grid.Row="3" Grid.Column="1">
@@ -56,11 +56,13 @@
         </Grid>
 
         <Grid x:Name="Form_Submit" Grid.Row="3">
-            
+            <Button x:Name="LogIn_Button" Content="Войти" Style="{StaticResource ResourceKey=LogIn_Button}" Command=""></Button>
         </Grid>
 
         <Grid x:Name="Registration_Submit" Grid.Row="4">
-            
+            <TextBlock x:Name="Registration_Text" Style="{StaticResource ResourceKey=Regestration_Text}">
+                <Hyperlink Command="" Style="{StaticResource ResourceKey=Hyperlink_Text}">Нет аккаунта? Зарегистрируйтесь!</Hyperlink>
+            </TextBlock>
         </Grid>
     </Grid>
 </Window>

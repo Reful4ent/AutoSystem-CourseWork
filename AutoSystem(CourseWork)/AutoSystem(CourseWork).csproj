@@ -10,11 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\Images\logo.png" />
+    <None Remove="View\Images\MinWindow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Data\UserSerialization\" />
     <Folder Include="Data\TestOrRoutesSerialization\" />
-    <Folder Include="ViewModel\Commands\" />
     <Folder Include="ViewModel\DataManager\" />
-    <Folder Include="View\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\Images\logo.png" />
+    <Resource Include="View\Images\MinWindow.png" />
   </ItemGroup>
 
 </Project>
