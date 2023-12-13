@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model
 {
-    internal class Tests
+    public class Tests : ITest
     {
+
     }
 }

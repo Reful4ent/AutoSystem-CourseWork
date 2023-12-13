@@ -15,19 +15,21 @@ namespace AutoSystem_CourseWork_.Model
         public string Name { get; }
         public string Login { get; }
         public string Password { get; }
-
         public int Role_Id { get; set; }
         private IChooseRole Role { get; set; }
+        public List<ICourse> Courses { get; set; }
 
-        public User (Guid Id, string Name, string Login, string Password, int Role_Id)
+        public User(Guid Id, string Name, string Login, string Password, int Role_Id, List<ICourse> Courses)
         {
             this.Id = Id;
             this.Name = Name;
             this.Login = Login;
             this.Password = Password;
             this.Role_Id = Role_Id;
-            MyRoleFabric fabric = MyRole.GetMyRole(this.Role_Id);
-            this.Role = fabric.GetRole();
+            //MyRoleFabric fabric = MyRole.GetMyRole(this.Role_Id);
+            //this.Role = fabric.GetRole();
+            this.Role = ReturnRole.chooseRole(this.Role_Id);
+            this.Courses = Courses;
         }
     }
 }

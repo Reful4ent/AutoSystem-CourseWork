@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model
 {
-    internal interface ITest
+    public interface ITest
     {
     }
 }
