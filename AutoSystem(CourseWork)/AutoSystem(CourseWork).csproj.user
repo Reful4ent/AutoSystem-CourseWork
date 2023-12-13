@@ -10,6 +10,9 @@
     <Compile Update="View\LogInWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\RegistrationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,10 +24,16 @@
     <Page Update="View\LogInWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\LogInStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\MainStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\RegistrationStyles.xaml">

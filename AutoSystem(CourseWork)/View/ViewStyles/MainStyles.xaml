@@ -1,0 +1,180 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Стиль заднего фона-->
+    <Style x:Key="Background_Window" TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#8B0000" Offset="0"></GradientStop>
+                    <GradientStop Color="White" Offset="0.10" ></GradientStop>
+                    <GradientStop Color="White" Offset="0.5"></GradientStop>
+                    <GradientStop Color="White" Offset="0.85"></GradientStop>
+                    <GradientStop Color="#006400" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Стили навигационной панели-->
+    <Style x:Key="Navbar" TargetType="Grid">
+        <Setter Property="Width" Value="1200"></Setter>
+        <Setter Property="Height" Value="50"></Setter>
+        
+    </Style>
+    
+    
+
+    <Style x:Key="Minimize_Button" TargetType="Image">
+        <Setter Property="Margin" Value="1100 0 0 0"></Setter>
+        <Setter Property="Width" Value="40"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+    </Style>
+
+    <Style x:Key="Exit_Button" TargetType="Path">
+        <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Setter Property="Fill" Value="Black"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="40"></Setter>
+        <Setter Property="Stretch" Value="Fill"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    
+    <!--Стили профиля-->
+    <Style x:Key="Profile_Img" TargetType="Ellipse">
+        <Setter Property="Margin" Value="50 0 0 0"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="Height" Value="50"></Setter>
+        <Setter Property="Fill">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF00FF" Offset="0"></GradientStop>
+                    <GradientStop Color="#4B0082" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style x:Key="Profile_Text" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Setter Property="FontSize" Value="26"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="FontWeight" Value="DemiBold"></Setter>
+    </Style>
+
+    <Style x:Key="Admin_Button" TargetType="Button">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="Test_Button" TargetType="Button">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="100 0 0 0"></Setter>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <!--Стили курсов-->
+    <Style x:Key="Course_Text" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+
+    <Style x:Key="MyCourse_Style" TargetType="Grid">
+        <Setter Property="Width" Value="1186"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#DC143C" Offset="0"></GradientStop>
+                    <GradientStop Color="#00FF7F" Offset="0.95"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Add_Course" TargetType="Button">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

@@ -28,3 +28,6 @@ C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\De
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\AutoSystem(CourseWork).csproj.AssemblyReference.cache
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\AutoSystem(CourseWork).csproj.CopyComplete
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\MainWindow.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\MainStyles.baml
