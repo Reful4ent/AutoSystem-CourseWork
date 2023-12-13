@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSystem_CourseWork_.Model.Possibilities.Interfaces
+namespace AutoSystem_CourseWork_.Model.Сourse.Test.Questions
 {
-    public interface IAddCourse
+    public class Question : IQuestion
     {
     }
 }

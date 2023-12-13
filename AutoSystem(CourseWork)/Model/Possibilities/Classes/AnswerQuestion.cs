@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
-    public class CantDeleteUser : IDeleteUser
+    public class AnswerQuestion : IAnswerQuestion
     {
-        public bool DeleteUser()
+        public string AnswerTheQuestion()
         {
             throw new NotImplementedException();
         }

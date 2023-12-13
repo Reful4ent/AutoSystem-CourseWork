@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
-    public class CantDeleteUser : IDeleteUser
+    public class CanChangeCourse : IChangeCourse
     {
-        public bool DeleteUser()
+        public bool AddCourse()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteCourse()
         {
             throw new NotImplementedException();
         }

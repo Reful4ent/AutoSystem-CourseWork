@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSystem_CourseWork_.Model
+namespace AutoSystem_CourseWork_.Model.Сourse
 {
     public enum CourseTypeEnum
     {

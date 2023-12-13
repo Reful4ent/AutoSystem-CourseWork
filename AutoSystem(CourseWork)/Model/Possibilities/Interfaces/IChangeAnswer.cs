@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model.Possibilities.Interfaces
 {
-    public interface IDeleteTest
+    public interface IChangeAnswer
     {
+        public bool AddAnswer();
+        public bool DeleteAnswer();
     }
 }

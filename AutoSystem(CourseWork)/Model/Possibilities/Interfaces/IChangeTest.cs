@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model.Possibilities.Interfaces
 {
-    public interface IDeleteUser
+    public interface IChangeTest
     {
-        public bool DeleteUser();
+        public bool AddTest();
+        public bool DeleteTest();
     }
 }

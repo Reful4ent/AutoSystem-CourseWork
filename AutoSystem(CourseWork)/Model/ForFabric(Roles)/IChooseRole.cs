@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Model.ForFabric_Roles_
 {
-    public interface IChooseRole : IChangeUserRole,IDeleteUser, IAddTest, IDeleteTest, IAddCourse, IDeleteCourse 
+    public interface IChooseRole : IChangeUserRole, IDeleteUser, IChangeCourse, IChangeTest, IChangeQuestion, IChangeAnswer, IAnswerQuestion, IChangeUserCourse,
     {
+
     }
 }

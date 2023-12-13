@@ -7,8 +7,16 @@ using AutoSystem_CourseWork_.Model.Possibilities.Interfaces;
 
 namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
-    public class CantAddTest : IAddTest
+    public class CanChangeTest : IChangeTest
     {
+        public bool AddTest()
+        {
+            throw new NotImplementedException();
+        }
 
+        public bool DeleteTest()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

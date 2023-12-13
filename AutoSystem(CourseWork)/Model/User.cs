@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoSystem_CourseWork_.Model.ForFabric_Roles_;
 using AutoSystem_CourseWork_.Model.Fabric;
+using AutoSystem_CourseWork_.Model.Сourse;
 
 namespace AutoSystem_CourseWork_.Model
 {
@@ -26,8 +27,6 @@ namespace AutoSystem_CourseWork_.Model
             this.Login = Login;
             this.Password = Password;
             this.Role_Id = Role_Id;
-            //MyRoleFabric fabric = MyRole.GetMyRole(this.Role_Id);
-            //this.Role = fabric.GetRole();
             this.Role = ReturnRole.chooseRole(this.Role_Id);
             this.Courses = Courses;
         }
