@@ -9,6 +9,9 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
     public class CantChangeUserRole : IChangeUserRole
     {
-        public bool ChangeUserRole(int Role_Id) => false;
+        public List<User> ChangeUserRole(List<User> users, int number, int Role_Id)
+        {
+            return null;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoSystem_CourseWork_.Model.Possibilities.Interfaces;
+using AutoSystem_CourseWork_.Model.Сourse;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,14 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
     public class CantChangeCourse : IChangeCourse
     {
-        public bool AddCourse()
+        public bool AddCourse(List<ICourse> courses, ICourse course)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
-        public bool DeleteCourse()
+        public bool DeleteCourse(List<ICourse> courses, int number)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

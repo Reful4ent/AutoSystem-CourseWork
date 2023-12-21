@@ -14,5 +14,7 @@ namespace AutoSystem_CourseWork_.Model.Сourse
         public string Name { get; }
         public CourseTypeEnum CourseType { get; }
         public List<ITest> Tests { get; }
+        public bool AddTest(ITest test);
+        public bool DeleteTest(int number);
     }
 }

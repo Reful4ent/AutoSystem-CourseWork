@@ -8,6 +8,6 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Interfaces
 {
     public interface IDeleteUser
     {
-        public bool DeleteUser();
+        public List<User> DeleteUser(List<User> users, int number);
     }
 }

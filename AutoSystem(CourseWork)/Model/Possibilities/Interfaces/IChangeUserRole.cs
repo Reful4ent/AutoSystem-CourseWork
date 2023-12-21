@@ -8,6 +8,6 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Interfaces
 {
     public interface IChangeUserRole
     {
-        public bool ChangeUserRole(int Role_Id);
+        public List<User> ChangeUserRole(List<User> users, int number, int Role_Id);
     }
 }

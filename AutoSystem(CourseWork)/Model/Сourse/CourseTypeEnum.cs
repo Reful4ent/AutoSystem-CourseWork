@@ -14,6 +14,7 @@ namespace AutoSystem_CourseWork_.Model.Сourse
         Electrical_Engineering,
         Programming,
         Linear_algebra,
-        Foreign_language
+        Foreign_language,
+        History
     }
 }

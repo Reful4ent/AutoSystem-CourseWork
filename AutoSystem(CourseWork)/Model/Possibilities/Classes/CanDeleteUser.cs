@@ -9,9 +9,12 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 {
     public class CanDeleteUser : IDeleteUser
     {
-        public bool DeleteUser()
+        public List<User> DeleteUser(List<User> users, int number)
         {
-            throw new NotImplementedException();
+            if (number >= users.Count || number < 0)
+                return users;
+            users.RemoveAt(number);
+            return users;
         }
     }
 }
