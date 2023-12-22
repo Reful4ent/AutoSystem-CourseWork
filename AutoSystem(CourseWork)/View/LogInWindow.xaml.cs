@@ -42,9 +42,9 @@ namespace AutoSystem_CourseWork_.View
             this.Close();
         }
 
-        private void OpenErrorWindow(string item)
+        private void OpenErrorWindow(string text)
         {
-            ErrorWindow errorWindow = new ErrorWindow(item);
+            ErrorWindow errorWindow = new ErrorWindow(text);
             errorWindow.ShowDialog();
         }
 

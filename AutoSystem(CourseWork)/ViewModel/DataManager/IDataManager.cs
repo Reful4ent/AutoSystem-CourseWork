@@ -21,5 +21,6 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public Task SaveAllCoursesAsync();
         public Task LoadAllCoursesAsync();
         public bool TryLogIn(string login, string password);
+        public bool TryRegistration(string name, string login, string password, string passwordRepeat);
     }
 }

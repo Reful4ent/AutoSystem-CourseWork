@@ -36,6 +36,18 @@
         "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
         "$values": []
       }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "8c410f05-9817-45fa-92d9-44a753ec4a99",
+      "Name": "Дмитрий Иоанович",
+      "Login": "TryExp",
+      "Password": "201132",
+      "Role_Id": 0,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
     }
   ]
 }

@@ -43,11 +43,14 @@ namespace AutoSystem_CourseWork_.View
         }
         public void OpenMainWindow()
         {
-
+            MainWindow mainWindow = new MainWindow(dataManager);
+            mainWindow.Show();
+            this.Close();
         }
-        public void OpenErrorWindow(string item)
+        public void OpenErrorWindow(string text)
         {
-
+            ErrorWindow errorWindow = new ErrorWindow(text);
+            errorWindow.ShowDialog();
         }
 
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
