@@ -60,6 +60,8 @@
     <Style x:Key="Profile_Text" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
         <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Setter Property="MaxWidth" Value="235"></Setter>
+        <Setter Property="MinWidth" Value="235"></Setter> 
         <Setter Property="FontSize" Value="26"></Setter>
         <Setter Property="FontStyle" Value="Italic"></Setter>
         <Setter Property="FontWeight" Value="DemiBold"></Setter>

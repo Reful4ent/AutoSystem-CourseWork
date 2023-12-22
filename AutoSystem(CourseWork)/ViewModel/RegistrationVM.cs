@@ -36,8 +36,7 @@ namespace AutoSystem_CourseWork_.ViewModel
             get => login;
             set => Set(ref login, value);
         }
-        public string Password
-        {
+        public string Password        {
             get => password;
             set => Set(ref password, value);
         }

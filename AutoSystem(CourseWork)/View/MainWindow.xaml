@@ -28,10 +28,10 @@
         <Grid x:Name="Profile" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Ellipse x:Name="Profile_Image" Style="{DynamicResource ResourceKey=Profile_Img}"/>
-                <TextBlock x:Name="Profile_Name" Text="Гордиенко Дмитрий Андреевич" Style="{StaticResource ResourceKey=Profile_Text}"></TextBlock>
-                <TextBlock x:Name="Profile_Role" Text="Админ" Style="{StaticResource ResourceKey=Profile_Text}" Margin="100 0 0 0" MouseDown="Profile_Role_MouseDown"></TextBlock>
-                <Button x:Name="AddPanel" Content="Редактор" Command="" Visibility="Visible"  Style="{StaticResource ResourceKey=Test_Button}"/>
-                <Button x:Name="AdminPanel" Content="Администрирование" Command="" Visibility="Visible"  Style="{StaticResource ResourceKey=Admin_Button}"/>
+                <TextBlock x:Name="Profile_Name" Text="{Binding Name}" Style="{StaticResource ResourceKey=Profile_Text}"></TextBlock>
+                <TextBlock x:Name="Profile_Role" Text="{Binding Role}" Style="{StaticResource ResourceKey=Profile_Text}" Margin="100 0 0 0"></TextBlock>
+                <Button x:Name="AddPanel" Content="Редактор" Command=""  Style="{StaticResource ResourceKey=Test_Button}"/>
+                <Button x:Name="AdminPanel" Content="Администрирование" Command="" Style="{StaticResource ResourceKey=Admin_Button}"/>
             </StackPanel>
         </Grid>
         

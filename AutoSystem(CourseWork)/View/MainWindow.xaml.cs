@@ -1,4 +1,5 @@
 ﻿using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,17 +21,38 @@ namespace AutoSystem_CourseWork_.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        IDataManager dataManager;
         public MainWindow(IDataManager dataManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
-            Loaded += MainWindow_Loaded;
+            DataContext = new MainVM(this.dataManager = dataManager);
+            if (DataContext is MainVM mainVM)
+            {
+                ButtonHide(mainVM.Role_Id);
+            }
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void Panel_Loaded(object sender, RoutedEventArgs e)
         {
-            My_Courses.ItemsSource = new[] {new {Name = "MathCourse", TypeOf= "Math", Persent = 24 },
-                new {Name = "russianLanguage", TypeOf= "russian", Persent = 45 } };
+
+        }
+        private void ButtonHide(int Role_Id)
+        {
+            switch (Role_Id)
+            {
+                case 0:
+                    AddPanel.Visibility = Visibility.Hidden;
+                    AdminPanel.Visibility = Visibility.Hidden;
+                    break;
+                case 1:
+                    AdminPanel.Visibility = Visibility.Hidden;
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e) => this.Close();
@@ -38,10 +60,5 @@ namespace AutoSystem_CourseWork_.View
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
-
-        private void Profile_Role_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }
