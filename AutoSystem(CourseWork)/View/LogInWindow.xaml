@@ -61,7 +61,7 @@
 
         <Grid x:Name="Registration_Submit" Grid.Row="4">
             <TextBlock x:Name="Registration_Text" Style="{StaticResource ResourceKey=Regestration_Text}">
-                <Hyperlink Command="" Style="{StaticResource ResourceKey=Hyperlink_Text}">Нет аккаунта? Зарегистрируйтесь!</Hyperlink>
+                <Hyperlink Command="{Binding StartLogInCommand}" Style="{StaticResource ResourceKey=Hyperlink_Text}">Нет аккаунта? Зарегистрируйтесь!</Hyperlink>
             </TextBlock>
         </Grid>
     </Grid>

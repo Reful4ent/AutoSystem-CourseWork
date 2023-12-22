@@ -1,0 +1,27 @@
+﻿<Window x:Class="AutoSystem_CourseWork_.View.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSystem_CourseWork_.View"
+        mc:Ignorable="d"
+        Title="ErrorWindow" Height="200" Width="400" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <ResourceDictionary Source="/AutoSystem(CourseWork);component/View/ViewStyles/ErrorStyles.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid Style="{StaticResource ResourceKey=Background_Window}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Navbar" Grid.Row="0" Style="{StaticResource ResourceKey=Navbar}">
+            <StackPanel Orientation="Horizontal" x:Name="Navbar_Panel">
+                <Image x:Name="Minimize" MouseDown="Minimize_MouseDown" Source="/AutoSystem(CourseWork);component/View/Images/MinWindow.png" Style="{StaticResource ResourceKey=Minimize_Button}"></Image>
+                <Path x:Name="Exit" MouseDown="Exit_MouseDown" Style="{StaticResource ResourceKey=Exit_Button}"  Data="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></Path>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="ErrorRow" Grid.Row="1">
+            <TextBlock x:Name="ErrorText" Style="{StaticResource ResourceKey=ErrorText_Style}"></TextBlock>  
+        </Grid>
+    </Grid>
+</Window>

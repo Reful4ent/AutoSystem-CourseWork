@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.Data.UserSerialization
 {
-    internal class UserRepository : IBaseRepository<User>
+    public class UserRepository : IBaseRepository<User>
     {
         private List<User> _users = new();
         private string path = string.Empty;

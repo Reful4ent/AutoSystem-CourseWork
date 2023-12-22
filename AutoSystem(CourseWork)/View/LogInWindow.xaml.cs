@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutoSystem_CourseWork_.ViewModel;
+using AutoSystem_CourseWork_.ViewModel.DataManager;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -19,10 +21,31 @@ namespace AutoSystem_CourseWork_.View
     /// </summary>
     public partial class LogInWindow : Window
     {
-        public LogInWindow()
+        private IDataManager dataManager;
+        public LogInWindow(IDataManager dataManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
+            DataContext = new LogInVM(this.dataManager = dataManager);
+            if (DataContext is LogInVM logInVM)
+            {
+                logInVM.LogInSucces += OpenMainWindow;
+                logInVM.LogInFailed += OpenErrorWindow;
+            }
+
+        }
+
+        private void OpenMainWindow()
+        {
+            MainWindow mainWindow = new MainWindow(dataManager);
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void OpenErrorWindow(string item)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(item);
+            errorWindow.ShowDialog();
         }
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
@@ -53,8 +76,8 @@ namespace AutoSystem_CourseWork_.View
         }
         private void Form_Input_Password_PB_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            //if (DataContext is EnterVM enterViewModel)
-            //    enterViewModel.Password = Form_Input_Password_PB.Password;
+            if (DataContext is LogInVM LogInViewModel)
+                LogInViewModel.Password = Form_Input_Password_PB.Password;
         }
     }
 }

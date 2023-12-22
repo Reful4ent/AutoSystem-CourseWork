@@ -11,7 +11,7 @@ using System.IO;
 
 namespace AutoSystem_CourseWork_.Data.CoursesSerialization
 {
-    internal class CoursesRepository : IBaseRepository<Course>
+    public class CoursesRepository : IBaseRepository<Course>
     {
         private List<Course> _courses = new();
         private string path = string.Empty;

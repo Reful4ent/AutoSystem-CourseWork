@@ -1,6 +1,7 @@
 ﻿using AutoSystem_CourseWork_.Data.CoursesSerialization;
 using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.Model;
+using AutoSystem_CourseWork_.ViewModel.Services.LogInService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,11 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.DataManager
 {
-    internal class DataManager : IDataManager
+     class DataManager : IDataManager
     {
+        //Сервисы
+        private LogInService logInService;
+
         private readonly UserRepository userRepository;
         private readonly CoursesRepository coursesRepository;
         private User particulalUser = null;
@@ -23,6 +27,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         {
             this.userRepository = userRepository;
             this.coursesRepository = coursesRepository;
+            this.logInService = new(this.userRepository, particulalUser);
         }
         public static DataManager Instance(UserRepository userRepository, CoursesRepository courseRepository) => new(userRepository, courseRepository);
 
@@ -44,6 +49,11 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public async Task LoadAllCoursesAsync()
         {
             await coursesRepository.LoadAsync();
+        }
+
+        public bool TryLogIn(string login, string password)
+        {
+            return logInService.TryLogIn(login, password);
         }
     }
 }

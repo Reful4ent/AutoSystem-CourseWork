@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.DataManager
 {
-    internal interface IDataManager
+    public interface IDataManager
     {
         public User ParticularUser { get; }
         public UserRepository UserRepository { get; }
@@ -20,6 +20,6 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
 
         public Task SaveAllCoursesAsync();
         public Task LoadAllCoursesAsync();
-
+        public bool TryLogIn(string login, string password);
     }
 }

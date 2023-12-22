@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\App.xaml
-7-734718209
+9278209944
 
-56108598989
+59-897024748
 1991964988371
-MainWindow.xaml;View\LogInWindow.xaml;View\MainWindow.xaml;View\RegistrationWindow.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\MainStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;
+MainWindow.xaml;View\ErrorWindow.xaml;View\LogInWindow.xaml;View\MainWindow.xaml;View\RegistrationWindow.xaml;View\ViewStyles\ErrorStyles.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\MainStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;
 
 True
 
