@@ -1,7 +1,9 @@
-﻿using AutoSystem_CourseWork_.ViewModel.DataManager;
+﻿using AutoSystem_CourseWork_.Model.Сourse;
+using AutoSystem_CourseWork_.ViewModel.DataManager;
 using AutoSystem_CourseWork_.ViewModel.Roles;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +17,14 @@ namespace AutoSystem_CourseWork_.ViewModel
         private string name = string.Empty;
         private string role = string.Empty;
         private int role_Id;
+        private ObservableCollection<ICourse> courses;
         public MainVM(IDataManager dataManager)
         {
             this.dataManager = dataManager;
             Name = this.dataManager.ParticularUser.Name;
             Role_Id = this.dataManager.ParticularUser.Role_Id;
             Role = UserRole.GetName(typeof(UserRole), (UserRole)(this.dataManager.ParticularUser.Role_Id));
+            courses = new ObservableCollection<ICourse>(this.dataManager.ParticularUser.Courses);
         }
 
         public string Name

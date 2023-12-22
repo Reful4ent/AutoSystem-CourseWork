@@ -33,10 +33,6 @@ namespace AutoSystem_CourseWork_.View
             }
         }
 
-        private void Panel_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void ButtonHide(int Role_Id)
         {
             switch (Role_Id)
