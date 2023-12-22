@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoSystem_CourseWork_.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.LogInService
 {
     internal interface ILogIn
     {
-        public bool TryLogIn(string login, string password);
+        public bool TryLogIn(string login, string password, ref User userParticularUser);
     }
 }

@@ -8,6 +8,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -19,13 +21,34 @@ namespace AutoSystem_CourseWork_.View
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        public RegistrationWindow()
+        IDataManager dataManager;
+        public RegistrationWindow(IDataManager dataManager)
         {
             InitializeComponent();
+            this.dataManager = dataManager;
+            DataContext = new RegistrationVM(this.dataManager);
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
+            if(DataContext is RegistrationVM registrationVM)
+            {
+                registrationVM.RegistrationSucces += OpenMainWindow;
+                registrationVM.RegistrationFailed += OpenErrorWindow;
+            }
         }
 
-        private void Exit_MouseDown(object sender, MouseButtonEventArgs e) => this.Close();
+        private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LogInWindow logInWindow = new LogInWindow(dataManager);
+            logInWindow.Show();
+            this.Close();
+        }
+        public void OpenMainWindow()
+        {
+
+        }
+        public void OpenErrorWindow(string item)
+        {
+
+        }
 
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
 
@@ -57,15 +80,19 @@ namespace AutoSystem_CourseWork_.View
                 Form_Input_Password_RepTB.Visibility = Visibility.Hidden;
             }
         }
-
-        private void Form_Input_Password_RepPB_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Form_Input_Password_PB_PasswordChanged(object sender, RoutedEventArgs e)
         {
-
+            if(DataContext is RegistrationVM registrationVM)
+            {
+                registrationVM.Password = Form_Input_Password_PB.Password;
+            }
+        }
+        private void Form_Input_Password_RepPB_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RegistrationVM registrationVM)
+            {
+                registrationVM.PasswordRepeat = Form_Input_Password_RepPB.Password;
+            }
         }
     }
 }

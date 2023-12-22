@@ -13,16 +13,13 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.LogInService
 {
     internal class LogInService : ILogIn
     {
-
         private UserRepository UserRepository;
-        private User ParticularUser;
-        public LogInService(UserRepository UserRepository, User user) 
+        public LogInService(UserRepository UserRepository)
         {
             this.UserRepository = UserRepository;
-            this.ParticularUser = user;
         }
 
-        public bool TryLogIn(string login, string password)
+        public bool TryLogIn(string login, string password,ref User ParticularUser)
         {
             password = Convert.ToBase64String(MD5.HashData(Encoding.UTF8.GetBytes(password)));
             var tryFind = (from x in UserRepository.GetUsers()

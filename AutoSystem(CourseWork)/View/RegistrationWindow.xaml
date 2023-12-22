@@ -48,18 +48,18 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock x:Name="Form_Text_Name" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Имя:</TextBlock>
-            <TextBox x:Name="Form_Input_Name" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Name}" Style="{StaticResource Form_Input}"></TextBox>
+            <TextBox x:Name="Form_Input_Name" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Name}" Style="{StaticResource Form_Input}" MaxLength="30"></TextBox>
             
             <TextBlock x:Name="Form_Text_Log" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Логин:</TextBlock>
-            <TextBox x:Name="Form_Input_Login" Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Login}" Style="{StaticResource Form_Input}"></TextBox>
+            <TextBox x:Name="Form_Input_Login" Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Login}" Style="{StaticResource Form_Input}" MaxLength="40"></TextBox>
             
             <TextBlock x:Name="Form_Text_Pass" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Пароль:</TextBlock>
-            <PasswordBox x:Name="Form_Input_Password_PB" Grid.Row="5" Grid.Column="0" PasswordChanged="Form_Input_Password_PB_PasswordChanged" Style="{StaticResource Form_Input_Password_PB}"/>
-            <TextBox x:Name="Form_Input_Password_TB" Grid.Row="5" Grid.Column="0" Visibility="Hidden" Text="{Binding Password}" Style="{StaticResource Form_Input_Password_TB}"></TextBox>
+            <PasswordBox x:Name="Form_Input_Password_PB" Grid.Row="5" Grid.Column="0" PasswordChanged="Form_Input_Password_PB_PasswordChanged" Style="{StaticResource Form_Input_Password_PB}" MaxLength="20"/>
+            <TextBox x:Name="Form_Input_Password_TB" Grid.Row="5" Grid.Column="0" Visibility="Hidden" Text="{Binding Password}" Style="{StaticResource Form_Input_Password_TB}" MaxLength="20"></TextBox>
 
             <TextBlock x:Name="Form_Text_Pass_Repeat" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource Form_Text}">Повторите пароль:</TextBlock>
-            <PasswordBox x:Name="Form_Input_Password_RepPB" Grid.Row="7" Grid.Column="0" PasswordChanged="Form_Input_Password_RepPB_PasswordChanged" Style="{StaticResource Form_Input_Password_PB}"/>
-            <TextBox x:Name="Form_Input_Password_RepTB" Grid.Row="7" Grid.Column="0" Visibility="Hidden" Text="{Binding Password}" Style="{StaticResource Form_Input_Password_TB}"></TextBox>
+            <PasswordBox x:Name="Form_Input_Password_RepPB" Grid.Row="7" Grid.Column="0" PasswordChanged="Form_Input_Password_RepPB_PasswordChanged" Style="{StaticResource Form_Input_Password_PB}" MaxLength="20"/>
+            <TextBox x:Name="Form_Input_Password_RepTB" Grid.Row="7" Grid.Column="0" Visibility="Hidden" Text="{Binding PasswordRepeat}" Style="{StaticResource Form_Input_Password_TB}" MaxLength="20"></TextBox>
             <StackPanel Grid.Row="5" Grid.Column="1">
                 <Path x:Name="Watch_Password" Style="{StaticResource ResourceKey=Watch_Password}" MouseDown="Watch_Password_MouseDown" Data="M63.714,30.516C63.347,29.594,54.448,8,31.999,8S0.651,29.594,0.284,30.516 c-0.379,0.953-0.379,2.016,0,2.969C0.651,34.406,9.55,56,31.999,56s31.348-21.594,31.715-22.516C64.093,32.531,64.093,31.469,63.714,30.516z M31.999,40c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.417,40,31.999,40z" />
             </StackPanel>

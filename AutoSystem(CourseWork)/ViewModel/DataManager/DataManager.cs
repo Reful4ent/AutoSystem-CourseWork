@@ -27,7 +27,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         {
             this.userRepository = userRepository;
             this.coursesRepository = coursesRepository;
-            this.logInService = new(this.userRepository, particulalUser);
+            this.logInService = new(this.userRepository);
         }
         public static DataManager Instance(UserRepository userRepository, CoursesRepository courseRepository) => new(userRepository, courseRepository);
 
@@ -53,7 +53,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
 
         public bool TryLogIn(string login, string password)
         {
-            return logInService.TryLogIn(login, password);
+            return logInService.TryLogIn(login, password, ref particulalUser);
         }
     }
 }
