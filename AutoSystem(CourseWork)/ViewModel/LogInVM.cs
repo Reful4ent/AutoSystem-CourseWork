@@ -51,7 +51,10 @@ namespace AutoSystem_CourseWork_.ViewModel
         {
             get
             {
-                return new Command(() => { StartLogIn();});
+                return new Command(() =>
+                {
+                    StartLogIn();
+                });
             }
         }
 

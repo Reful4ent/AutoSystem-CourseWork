@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoSystem_CourseWork_.View"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ErrorWindow" Height="200" Width="400" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
         <ResourceDictionary Source="/AutoSystem(CourseWork);component/View/ViewStyles/ErrorStyles.xaml"></ResourceDictionary>

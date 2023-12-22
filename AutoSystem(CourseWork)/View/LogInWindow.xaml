@@ -56,12 +56,12 @@
         </Grid>
 
         <Grid x:Name="Form_Submit" Grid.Row="3">
-            <Button x:Name="LogIn_Button" Content="Войти" Style="{StaticResource ResourceKey=LogIn_Button}" Command=""></Button>
+            <Button x:Name="LogIn_Button" Content="Войти" Style="{StaticResource ResourceKey=LogIn_Button}" Command="{Binding StartLogInCommand}"></Button>
         </Grid>
 
         <Grid x:Name="Registration_Submit" Grid.Row="4">
             <TextBlock x:Name="Registration_Text" Style="{StaticResource ResourceKey=Regestration_Text}">
-                <Hyperlink Command="{Binding StartLogInCommand}" Style="{StaticResource ResourceKey=Hyperlink_Text}">Нет аккаунта? Зарегистрируйтесь!</Hyperlink>
+                <Hyperlink Command="" Style="{StaticResource ResourceKey=Hyperlink_Text}">Нет аккаунта? Зарегистрируйтесь!</Hyperlink>
             </TextBlock>
         </Grid>
     </Grid>

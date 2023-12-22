@@ -1,0 +1,41 @@
+{
+  "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "c1953421-dbc3-4953-8c64-cf99685a8bb1",
+      "Name": "Admin",
+      "Login": "Admin",
+      "Password": "CFovVr+yfLLkTvPEV1kblg==",
+      "Role_Id": 2,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "28d46a75-aa4d-41ea-9755-e8b7606dd57e",
+      "Name": "Tutor",
+      "Login": "Tutor",
+      "Password": "2FeO34RYzgb7xbt2pYxcpA==",
+      "Role_Id": 1,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "c3b0bc98-dae3-438f-ad02-3a969c40c3f4",
+      "Name": "Student",
+      "Login": "Student",
+      "Password": "ICy5YqxZB1uWSwcVLSNLcA==",
+      "Role_Id": 0,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
+    }
+  ]
+}
