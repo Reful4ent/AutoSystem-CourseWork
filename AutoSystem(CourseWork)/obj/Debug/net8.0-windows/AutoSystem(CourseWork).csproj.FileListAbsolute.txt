@@ -38,3 +38,6 @@ C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\De
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\CoursesAddList.g.cs
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\CoursesAddList.baml
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\CoursesAddListStyles.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ChangeUserRepositoryWindow.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ChangeUserRepositoryWindow.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\ChangeUserRepositoryStyles.baml

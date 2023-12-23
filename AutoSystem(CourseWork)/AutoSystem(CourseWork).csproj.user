@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\ChangeUserRepositoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\CoursesAddList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +30,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ChangeUserRepositoryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\CoursesAddList.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -40,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\ChangeUserRepositoryStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\CoursesAddListStyles.xaml">

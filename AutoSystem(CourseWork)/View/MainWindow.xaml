@@ -31,7 +31,7 @@
                 <TextBlock x:Name="Profile_Name" Text="{Binding Name}" Style="{StaticResource ResourceKey=Profile_Text}"></TextBlock>
                 <TextBlock x:Name="Profile_Role" Text="{Binding Role}" Style="{StaticResource ResourceKey=Profile_Text}" Margin="100 0 0 0"></TextBlock>
                 <Button x:Name="AddPanel" Content="Редактор" Command=""  Style="{StaticResource ResourceKey=Test_Button}"/>
-                <Button x:Name="AdminPanel" Content="Администрирование" Command="" Style="{StaticResource ResourceKey=Admin_Button}"/>
+                <Button x:Name="AdminPanel" Content="Администрирование" Click="AdminPanel_Click" Style="{StaticResource ResourceKey=Admin_Button}"/>
             </StackPanel>
         </Grid>
         

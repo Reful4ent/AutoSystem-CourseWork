@@ -3,6 +3,7 @@ using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.Model.Сourse;
 using AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService;
+using AutoSystem_CourseWork_.ViewModel.Services.ChangeUserRepService;
 using AutoSystem_CourseWork_.ViewModel.Services.LogInService;
 using AutoSystem_CourseWork_.ViewModel.Services.RegistrationService;
 using System;
@@ -19,6 +20,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         private LogInService logInService;
         private RegistrationService registrationService;
         private ChangeUserCourseService changeUserCourseService;
+        private ChangeUserRepService changeUserRepService;
 
         private UserRepository userRepository;
         private CoursesRepository coursesRepository;
@@ -35,6 +37,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
             this.logInService = new(this.userRepository);
             this.registrationService = new();
             this.changeUserCourseService = new();
+            this.changeUserRepService = new();
         }
         public static DataManager Instance(UserRepository userRepository, CoursesRepository courseRepository) => new(userRepository, courseRepository);
 
@@ -76,6 +79,16 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public bool TryRemoveUserCourse(int number)
         {
             return changeUserCourseService.TryRemoveUserCourse(number, ref userRepository, ref particulalUser);
+        }
+
+        public bool TryDeleteUser(int number)
+        {
+            return changeUserRepService.TryDeleteUser(number, ref userRepository, ref particulalUser);
+        }
+
+        public bool TryChangeUserRole(int number, int Role_Id)
+        {
+            return changeUserRepService.TryChangeUserRole(number,Role_Id, ref userRepository, ref particulalUser);
         }
     }
 }

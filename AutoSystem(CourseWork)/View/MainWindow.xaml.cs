@@ -81,5 +81,11 @@ namespace AutoSystem_CourseWork_.View
             ErrorWindow errorWindow = new ErrorWindow(text);
             errorWindow.ShowDialog();
         }
+
+        private void AdminPanel_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeUserRepositoryWindow changeUserRepositoryWindow = new ChangeUserRepositoryWindow(dataManager);
+            changeUserRepositoryWindow.ShowDialog();
+        }
     }
 }

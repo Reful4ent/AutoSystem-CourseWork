@@ -1,0 +1,154 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Стиль заднего фона-->
+    <Style x:Key="Background_Window" TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#8B0000" Offset="0"></GradientStop>
+                    <GradientStop Color="White" Offset="0.15"></GradientStop>
+                    <GradientStop Color="White" Offset="0.5"></GradientStop>
+                    <GradientStop Color="White" Offset="0.95"></GradientStop>
+                    <GradientStop Color="#006400" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--Стили навигационной панели-->
+    <Style x:Key="Navbar" TargetType="Grid">
+        <Setter Property="Width" Value="400"></Setter>
+        <Setter Property="Height" Value="50"></Setter>
+    </Style>
+
+    <Style x:Key="Minimize_Button" TargetType="Image">
+        <Setter Property="Margin" Value="300 0 0 0"></Setter>
+        <Setter Property="Width" Value="40"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+    </Style>
+
+    <Style x:Key="Exit_Button" TargetType="Path">
+        <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Setter Property="Fill" Value="Black"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="40"></Setter>
+        <Setter Property="Stretch" Value="Fill"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style x:Key="Navbar_Border" TargetType="Border">
+        <Setter Property="BorderThickness" Value="0 0 0 2"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Стили текст бокса смены ролей-->
+    <Style x:Key="Info_AU" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+        <Setter Property="Margin" Value="35 0 0 0"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Roles_Box_Styles" TargetType="TextBox">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+    </Style>
+    <!--Стили пользователей-->
+    <Style x:Key="User_Text" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10 0 0 0"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+
+    <Style x:Key="User_List_Style" TargetType="Grid">
+        <Setter Property="Width" Value="365"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#DC143C" Offset="0"></GradientStop>
+                    <GradientStop Color="#00FF7F" Offset="0.95"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Стили кнопки добавления-->
+    <Style x:Key="UserDelete_Button" TargetType="Button">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </Style.Resources>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="UserChangeRole_Button" TargetType="Button">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </Style.Resources>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
