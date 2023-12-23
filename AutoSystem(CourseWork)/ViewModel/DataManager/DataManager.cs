@@ -2,10 +2,13 @@
 using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.Model.Сourse;
+using AutoSystem_CourseWork_.Model.Сourse.Test;
+using AutoSystem_CourseWork_.Model.Сourse.Test.Questions;
 using AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService;
 using AutoSystem_CourseWork_.ViewModel.Services.ChangeUserRepService;
 using AutoSystem_CourseWork_.ViewModel.Services.LogInService;
 using AutoSystem_CourseWork_.ViewModel.Services.RegistrationService;
+using AutoSystem_CourseWork_.ViewModel.Services.TestsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +24,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         private RegistrationService registrationService;
         private ChangeUserCourseService changeUserCourseService;
         private ChangeUserRepService changeUserRepService;
+        private TestsQustionService testsQustionService;
 
         private UserRepository userRepository;
         private CoursesRepository coursesRepository;
@@ -38,6 +42,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
             this.registrationService = new();
             this.changeUserCourseService = new();
             this.changeUserRepService = new();
+            this.testsQustionService = new();
         }
         public static DataManager Instance(UserRepository userRepository, CoursesRepository courseRepository) => new(userRepository, courseRepository);
 
@@ -89,6 +94,16 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public bool TryChangeUserRole(int number, int Role_Id)
         {
             return changeUserRepService.TryChangeUserRole(number,Role_Id, ref userRepository, ref particulalUser);
+        }
+
+        public List<ITest> GetTests(int number)
+        {
+            return testsQustionService.GetTests(number, ref coursesRepository);
+        }
+
+        public List<IQuestion> GetQuestions(int numberCourse,int numberTest)
+        {
+            return testsQustionService.GetQuestions(numberCourse, numberTest, ref coursesRepository);
         }
     }
 }

@@ -48,7 +48,12 @@ namespace AutoSystem_CourseWork_.View
             errorWindow.ShowDialog();
         }
 
-       
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow(dataManager);
+            registrationWindow.Show();
+            this.Close();
+        }
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
 
@@ -80,13 +85,6 @@ namespace AutoSystem_CourseWork_.View
         {
             if (DataContext is LogInVM LogInViewModel)
                 LogInViewModel.Password = Form_Input_Password_PB.Password;
-        }
-
-        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
-        {
-            RegistrationWindow registrationWindow = new RegistrationWindow(dataManager);
-            registrationWindow.Show();
-            this.Close();
         }
     }
 }

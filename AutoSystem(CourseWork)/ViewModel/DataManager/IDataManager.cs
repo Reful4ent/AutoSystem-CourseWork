@@ -2,6 +2,8 @@
 using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.Model.Сourse;
+using AutoSystem_CourseWork_.Model.Сourse.Test;
+using AutoSystem_CourseWork_.Model.Сourse.Test.Questions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,5 +29,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public bool TryRemoveUserCourse(int number);
         public bool TryDeleteUser(int number);
         public bool TryChangeUserRole(int number, int Role_Id);
+        public List<ITest> GetTests(int number);
+        public List<IQuestion> GetQuestions(int numberCourse, int numberTest);
     }
 }

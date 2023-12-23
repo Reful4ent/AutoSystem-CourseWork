@@ -17,7 +17,7 @@
 
     <!--Стили навигационной панели-->
     <Style x:Key="Navbar" TargetType="Grid">
-        <Setter Property="Width" Value="1200"></Setter>
+        <Setter Property="Width" Value="1400"></Setter>
         <Setter Property="Height" Value="50"></Setter>
 
     </Style>
@@ -25,7 +25,7 @@
 
 
     <Style x:Key="Minimize_Button" TargetType="Image">
-        <Setter Property="Margin" Value="1100 0 0 0"></Setter>
+        <Setter Property="Margin" Value="1300 0 0 0"></Setter>
         <Setter Property="Width" Value="40"></Setter>
         <Setter Property="Height" Value="40"></Setter>
     </Style>
@@ -40,7 +40,7 @@
     </Style>
     
     <!--Стили списка курсов-->
-    <Style x:Key="Course_Text" TargetType="TextBlock">
+    <Style x:Key="List_Text" TargetType="TextBlock">
         <Setter Property="Margin" Value="10 0 0 0"></Setter>
         <Setter Property="FontSize" Value="18"></Setter>
         <Setter Property="FontWeight" Value="DemiBold"></Setter>
@@ -55,6 +55,30 @@
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#DC143C" Offset="0"></GradientStop>
                     <GradientStop Color="#00FF7F" Offset="0.95"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Tests_List_Style" TargetType="Grid">
+        <Setter Property="Width" Value="465"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#8B008B" Offset="0"></GradientStop>
+                    <GradientStop Color="#0000FF" Offset="0.95"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Question_List_Style" TargetType="Grid">
+        <Setter Property="Width" Value="465"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#000000" Offset="0"></GradientStop>
+                    <GradientStop Color="#FF1493" Offset="0.95"></GradientStop>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>

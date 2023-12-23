@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:AutoSystem_CourseWork_.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ChangeCourseWindow" Height="700" Width="1200" MinHeight="700" MinWidth="1200" WindowStyle="None" ResizeMode="NoResize">
+        Title="ChangeCourseWindow" Height="800" Width="1400" MinHeight="700" MinWidth="1200" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary Source="/AutoSystem(CourseWork);component/View/ViewStyles/ChangeCoursesStyle.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid Style="{StaticResource ResourceKey=Background_Window}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="500"></ColumnDefinition>
-            <ColumnDefinition Width="700"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -29,8 +29,16 @@
         </Grid>
 
         <Grid x:Name="Courses_List" Grid.Row="1" Grid.Column="0">
-            <ScrollViewer>
-                <ListBox x:Name="List_Of_Courses" ItemsSource="{Binding CoursesList}" SelectedIndex="{Binding Index}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="183.33"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="183.33"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="183.33"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Курсы" Style="{StaticResource ResourceKey=CoursesNaming_Text}"></TextBlock>
+            <ListBox x:Name="List_Of_Courses" Grid.Row="1" ItemsSource="{Binding CoursesList}" SelectedIndex="{Binding IndexCourse}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Style="{StaticResource ResourceKey=Courses_List_Style}">
@@ -39,14 +47,43 @@
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="{Binding Name}" Grid.Row="0" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Name"></TextBlock>
-                                <TextBlock Text="{Binding AuthorName}" Grid.Row="1" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Type"></TextBlock>
-                                <TextBlock Text="{Binding CourseType}" Grid.Row="2" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Percent"></TextBlock>
+                                <TextBlock Text="{Binding Name}" Grid.Row="0" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Name"></TextBlock>
+                            <TextBlock Text="{Binding AuthorName}" Grid.Row="1" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Type"></TextBlock>
+                            <TextBlock Text="{Binding CourseType}" Grid.Row="2" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Percent"></TextBlock>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            </ScrollViewer>
+            <TextBlock Text="Тесты" Grid.Row="2"></TextBlock>
+            <ListBox x:Name="List_Of_Tests" Grid.Row="3" ItemsSource="{Binding TestsList}" SelectedIndex="{Binding IndexTest}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Style="{StaticResource ResourceKey=Tests_List_Style}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Name}" Grid.Row="0" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Name"></TextBlock>
+                            <TextBlock Text="{Binding CourseType}" Grid.Row="2" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Percent"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock Text="Вопросы" Grid.Row="4"></TextBlock>
+            <ListBox x:Name="List_Of_Questions" Grid.Row="5" ItemsSource="{Binding QuestionsList}" SelectedIndex="{Binding IndexQuestion}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Style="{StaticResource ResourceKey=Question_List_Style}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Id}" Grid.Row="0" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Name"></TextBlock>
+                            <TextBlock Text="{Binding Text}" Grid.Row="1" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Percent" TextTrimming="CharacterEllipsis"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
         
         <Grid x:Name="Courses_Add" Grid.Row="2" Grid.Column="0">
