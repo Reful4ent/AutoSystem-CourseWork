@@ -61,6 +61,10 @@ namespace AutoSystem_CourseWork_.View
         {
             CoursesAddList coursesAddList = new CoursesAddList(dataManager);
             coursesAddList.ShowDialog();
+            if(DataContext is MainVM mainVM)
+            {
+                mainVM.RefreshCourses();
+            }
         }
     }
 }

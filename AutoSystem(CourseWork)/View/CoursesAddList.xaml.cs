@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -27,6 +28,16 @@ namespace AutoSystem_CourseWork_.View
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
             DataContext = new CoursesAddListVM(this.dataManager = dataManager);
+            if (DataContext is CoursesAddListVM coursesAddListVM)
+            {
+                coursesAddListVM.AddCourseFailed += OpenErrorWindow;
+            }
+        }
+
+        public void OpenErrorWindow(string text)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(text);
+            errorWindow.ShowDialog();
         }
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();

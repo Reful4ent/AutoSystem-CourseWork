@@ -28,7 +28,7 @@
 
         <Grid x:Name="Courses_List" Grid.Row="1">
             <ScrollViewer>
-                <ListBox x:Name="List_Of_Courses" ItemsSource="{Binding CoursesList}">
+                <ListBox x:Name="List_Of_Courses" ItemsSource="{Binding CoursesList}" SelectedIndex="{Binding Index}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Style="{StaticResource ResourceKey=Courses_List_Style}">
@@ -48,7 +48,7 @@
         </Grid>
         
         <Grid x:Name="Courses_Add" Grid.Row="2">
-            <Button x:Name="Course_Add_Button" Content="Добавить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command=""></Button>
+            <Button x:Name="Course_Add_Button" Content="Добавить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command="{Binding AddUserCourseCommand}"></Button>
         </Grid>
     </Grid>
 </Window>

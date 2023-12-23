@@ -48,7 +48,12 @@ namespace AutoSystem_CourseWork_.ViewModel
         public ObservableCollection<ICourse> Courses
         {
             get => courses;
-            set=> Set(ref courses, value);
+            set => Set(ref courses, value);
+        }
+
+        public void RefreshCourses()
+        {
+            Courses = new ObservableCollection<ICourse>(this.dataManager.ParticularUser.Courses);
         }
     }
 }

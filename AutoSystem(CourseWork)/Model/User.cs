@@ -38,7 +38,10 @@ namespace AutoSystem_CourseWork_.Model
         public bool AddMeCourse(ICourse course)
         {
             if (course == null) return false;
-            if (Courses.Contains(course)) return false;
+            var CheckSimilary = from selectCourse in Courses
+                                where (course.Id == selectCourse.Id)
+                                select course;
+            if (CheckSimilary.Count() != 0) return false;
             Courses.Add(course);
             return true;
         }

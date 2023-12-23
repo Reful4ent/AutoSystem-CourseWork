@@ -162,58 +162,6 @@
                 }
               ]
             }
-          },
-          {
-            "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
-            "Id": "42f27f23-d155-439a-be79-f44a62148a17",
-            "Name": "Фундаментальная физика",
-            "AuthorName": "Teacher",
-            "CourseType": 2,
-            "Tests": {
-              "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.ITest, AutoSystem(CourseWork)]], System.Private.CoreLib",
-              "$values": [
-                {
-                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.TestOfCourse, AutoSystem(CourseWork)",
-                  "Id": "5bb2be08-5743-4302-9348-21a7394637cb",
-                  "Name": "Механика и термодинамика",
-                  "CourseType": 2,
-                  "answers": {
-                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Answers.IAnswer, AutoSystem(CourseWork)]], System.Private.CoreLib",
-                    "$values": [
-                      {
-                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
-                        "Id": "53547df5-3241-4bf7-93af-e06d769d2554",
-                        "Text": "20",
-                        "CourseType": 2
-                      },
-                      {
-                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
-                        "Id": "3f0060d7-a273-4405-8318-aebf0386413c",
-                        "Text": "6",
-                        "CourseType": 2
-                      }
-                    ]
-                  },
-                  "questions": {
-                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Questions.IQuestion, AutoSystem(CourseWork)]], System.Private.CoreLib",
-                    "$values": [
-                      {
-                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
-                        "Id": "53547df5-3241-4bf7-93af-e06d769d2554",
-                        "Text": "Какова скорость автомобиля, если за 30 минут он проехал 36 км?\nОтвет дать в м/с",
-                        "CourseType": 2
-                      },
-                      {
-                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
-                        "Id": "3f0060d7-a273-4405-8318-aebf0386413c",
-                        "Text": "На сколько градусов нагреется вода объемом V  =  2 л, если ей сообщить количество теплоты Q  =  50,4 кДж?",
-                        "CourseType": 2
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
           }
         ]
       }
