@@ -56,5 +56,11 @@ namespace AutoSystem_CourseWork_.View
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
+
+        private void Add_Course_Click(object sender, RoutedEventArgs e)
+        {
+            CoursesAddList coursesAddList = new CoursesAddList(dataManager);
+            coursesAddList.ShowDialog();
+        }
     }
 }

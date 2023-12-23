@@ -35,3 +35,6 @@ C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\bin\De
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\ErrorStyles.baml
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ErrorWindow.g.cs
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ErrorWindow.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\CoursesAddList.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\CoursesAddList.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\CoursesAddListStyles.baml

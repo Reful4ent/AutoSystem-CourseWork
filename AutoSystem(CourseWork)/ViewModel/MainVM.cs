@@ -24,7 +24,7 @@ namespace AutoSystem_CourseWork_.ViewModel
             Name = this.dataManager.ParticularUser.Name;
             Role_Id = this.dataManager.ParticularUser.Role_Id;
             Role = UserRole.GetName(typeof(UserRole), (UserRole)(this.dataManager.ParticularUser.Role_Id));
-            courses = new ObservableCollection<ICourse>(this.dataManager.ParticularUser.Courses);
+            Courses = new ObservableCollection<ICourse>(this.dataManager.ParticularUser.Courses);
         }
 
         public string Name
@@ -43,6 +43,12 @@ namespace AutoSystem_CourseWork_.ViewModel
         {
             get=> role_Id;
             set=> Set(ref role_Id, value);
+        }
+
+        public ObservableCollection<ICourse> Courses
+        {
+            get => courses;
+            set=> Set(ref courses, value);
         }
     }
 }

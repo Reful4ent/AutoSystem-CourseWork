@@ -36,7 +36,7 @@
         </Grid>
         
         <Grid x:Name="Courses" Grid.Row="2">
-            <ListBox x:Name="My_Courses">
+            <ListBox x:Name="My_Courses" ItemsSource="{Binding Courses}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Style="{StaticResource ResourceKey=MyCourse_Style}">
@@ -46,8 +46,8 @@
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <TextBlock Text="{Binding Name}" Grid.Row="0" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Name"></TextBlock>
-                            <TextBlock Text="{Binding TypeOf}" Grid.Row="1" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Type"></TextBlock>
-                            <TextBlock Text="{Binding Persent}" Grid.Row="2" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Percent"></TextBlock>
+                            <TextBlock Text="{Binding AuthorName}" Grid.Row="1" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Type"></TextBlock>
+                            <TextBlock Text="{Binding CourseType}" Grid.Row="2" Style="{StaticResource ResourceKey=Course_Text}" x:Name="Course_Percent"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -55,7 +55,7 @@
         </Grid>
 
         <Grid x:Name="Footer" Grid.Row="3">
-            <Button x:Name="Add_Course" Content="Добавить курс" Command="" Style="{StaticResource ResourceKey=Add_Course}"></Button>
+            <Button x:Name="Add_Course" Content="Добавить курс" Click="Add_Course_Click" Style="{StaticResource ResourceKey=Add_Course}"></Button>
         </Grid>
     </Grid>
 </Window>
