@@ -13,12 +13,6 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.RegistrationService
 {
     internal class RegistrationService : IRegistration
     {
-        //private UserRepository UserRepository;
-        //public RegistrationService(UserRepository UserRepository)
-        //{
-        //    this.UserRepository = UserRepository;
-        //}
-
         public bool TryRegistration(string name,string login,string password, string passwordRepeat, ref UserRepository userRepository)
         {
             if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(login) || String.IsNullOrEmpty(password) || String.IsNullOrEmpty(passwordRepeat) == null) return false;
