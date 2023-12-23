@@ -34,6 +34,7 @@ namespace AutoSystem_CourseWork_.View
             }
         }
 
+
         public void OpenErrorWindow(string text)
         {
             ErrorWindow errorWindow = new ErrorWindow(text);

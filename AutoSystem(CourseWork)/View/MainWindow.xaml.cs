@@ -30,6 +30,8 @@ namespace AutoSystem_CourseWork_.View
             if (DataContext is MainVM mainVM)
             {
                 ButtonHide(mainVM.Role_Id);
+                mainVM.DeleteSucces += RefreshWindow;
+                mainVM.DeleteFailed += OpenErrorWindow;
             }
         }
 
@@ -65,6 +67,19 @@ namespace AutoSystem_CourseWork_.View
             {
                 mainVM.RefreshCourses();
             }
+        }
+
+        public void RefreshWindow()
+        {
+            if (DataContext is MainVM mainVM)
+            {
+                mainVM.RefreshCourses();
+            }
+        }
+        public void OpenErrorWindow(string text)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(text);
+            errorWindow.ShowDialog();
         }
     }
 }

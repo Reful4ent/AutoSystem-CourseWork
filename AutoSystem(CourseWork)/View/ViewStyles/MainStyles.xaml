@@ -139,7 +139,7 @@
     </Style>
 
     <Style x:Key="MyCourse_Style" TargetType="Grid">
-        <Setter Property="Width" Value="1186"></Setter>
+        <Setter Property="Width" Value="1166"></Setter>
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -173,6 +173,38 @@
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
+        <Setter Property="Margin" Value="375 0 0 0"></Setter>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="Delete_Course" TargetType="Button">
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="50 0 0 0"></Setter>
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="20"></Setter>

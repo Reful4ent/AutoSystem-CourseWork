@@ -10,13 +10,21 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService
 {
-    internal class AddUserCourseService : IAddUserCourse
+    internal class ChangeUserCourseService : IChangeUserCourse
     {
         public bool TryAddUserCourse(ICourse course,ref UserRepository userRepository, ref User ParticularUser)
         {
             if (!(ParticularUser.AddMeCourse(course))) return false; 
             if(!(userRepository.Update(ParticularUser))) return false;
             if(!(userRepository.Save())) return false;
+            return true;
+        }
+
+        public bool TryRemoveUserCourse(int number, ref UserRepository userRepository, ref User ParticularUser)
+        {
+            if(!(ParticularUser.RemoveMeCourse(number))) return false;
+            if(!(userRepository.Update(ParticularUser))) return false;
+            if (!(userRepository.Save())) return false;
             return true;
         }
     }

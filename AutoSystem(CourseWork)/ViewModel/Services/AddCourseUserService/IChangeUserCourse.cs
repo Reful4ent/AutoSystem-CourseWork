@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService
 {
-    internal interface IAddUserCourse
+    internal interface IChangeUserCourse
     {
     }
 }

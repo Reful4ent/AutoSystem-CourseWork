@@ -16,7 +16,6 @@ namespace AutoSystem_CourseWork_.ViewModel
         IDataManager dataManager;
         private ObservableCollection<ICourse> coursesList;
         private int index;
-        public event Action? AddCourseSucces;
         public event Action<string>? AddCourseFailed;
 
         public CoursesAddListVM(IDataManager dataManager)
@@ -36,13 +35,9 @@ namespace AutoSystem_CourseWork_.ViewModel
             set => Set(ref index, value);
         }
 
-        public void AddUserCourse()
+        private void AddUserCourse()
         {
-            if (dataManager.TryAddUserCourse(CoursesList[index]))
-            {
-                AddCourseSucces?.Invoke();
-            }
-            else
+            if (!dataManager.TryAddUserCourse(CoursesList[index]))
             {
                 AddCourseFailed?.Invoke("У вас уже есть данный курс или курс пустой!");
             }

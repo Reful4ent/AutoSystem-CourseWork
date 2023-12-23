@@ -24,5 +24,6 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public bool TryLogIn(string login, string password);
         public bool TryRegistration(string name, string login, string password, string passwordRepeat);
         public bool TryAddUserCourse(ICourse course);
+        public bool TryRemoveUserCourse(int number);
     }
 }

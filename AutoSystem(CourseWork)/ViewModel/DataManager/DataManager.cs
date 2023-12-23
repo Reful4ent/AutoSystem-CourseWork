@@ -18,7 +18,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         //Сервисы
         private LogInService logInService;
         private RegistrationService registrationService;
-        private AddUserCourseService addUserCourseService;
+        private ChangeUserCourseService changeUserCourseService;
 
         private UserRepository userRepository;
         private CoursesRepository coursesRepository;
@@ -34,7 +34,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
             this.coursesRepository = coursesRepository;
             this.logInService = new(this.userRepository);
             this.registrationService = new();
-            this.addUserCourseService = new();
+            this.changeUserCourseService = new();
         }
         public static DataManager Instance(UserRepository userRepository, CoursesRepository courseRepository) => new(userRepository, courseRepository);
 
@@ -70,7 +70,12 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
 
         public bool TryAddUserCourse(ICourse course)
         {
-            return addUserCourseService.TryAddUserCourse(course, ref userRepository, ref particulalUser);
+            return changeUserCourseService.TryAddUserCourse(course, ref userRepository, ref particulalUser);
+        }
+
+        public bool TryRemoveUserCourse(int number)
+        {
+            return changeUserCourseService.TryRemoveUserCourse(number, ref userRepository, ref particulalUser);
         }
     }
 }
