@@ -32,5 +32,6 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public List<ITest> GetTests(int number);
         public List<IQuestion> GetQuestions(int numberCourse, int numberTest);
         public bool TryDeleteCourse(int number);
+        public bool TryDeleteTest(ICourse course, int number);
     }
 }

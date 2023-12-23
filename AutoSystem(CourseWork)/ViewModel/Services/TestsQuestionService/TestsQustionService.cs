@@ -17,7 +17,7 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
         {
             List<ICourse> courses = coursesRepository.GetCourses();
             List<ITest> tests = new List<ITest>();
-            if (courses.Count == 0) return tests;
+            if (courses.Count == 0 || number >= courses.Count || number < 0) return tests;
             for (int i = 0; i < courses[number].Tests.Count; i++) 
             {
                 tests.Add(courses[number].Tests[i]);
@@ -28,9 +28,9 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
         {
             List<IQuestion> questions = new List<IQuestion>();
             List<ICourse> courses = coursesRepository.GetCourses();
-            if (courses.Count == 0) return questions;
+            if (courses.Count == 0 || numberCourse >= courses.Count || numberCourse < 0) return questions;
             List<ITest> tests = courses[numberCourse].Tests;
-            if (tests.Count == 0) return questions;
+            if (tests.Count == 0 || numberTest >= tests.Count || numberTest<0) return questions;
             for (int i = 0;i < tests[numberTest].questions.Count;i++) 
             {
                 questions.Add(tests[numberTest].questions[i]);
@@ -43,6 +43,15 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             if (!ParticularUser.DeleteCourse(coursesRepository.GetCourses(),number)) return false;
             coursesRepository.Save();
             return true;
+        }
+
+        public bool DeleteTest(ICourse course, int number, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        {
+            if(!ParticularUser.DeleteTest(course,number)) return false;
+            if(!coursesRepository.Update(course)) return false;
+            coursesRepository.Save();
+            return true;
+
         }
     }
 }

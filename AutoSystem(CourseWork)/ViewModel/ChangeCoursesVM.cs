@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Serialization;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
@@ -17,11 +18,11 @@ namespace AutoSystem_CourseWork_.ViewModel
     {
         IDataManager dataManager;
         private ObservableCollection<ICourse> coursesList;
-        private int indexCourse;
+        private int indexCourse = 0;
         private ObservableCollection<ITest> testsList;
-        private int indexTest;
+        private int indexTest = 0;
         private ObservableCollection<IQuestion> questionsList;
-        private int indexQuestion;
+        private int indexQuestion = 0;
 
         public event Action? DeleteCourseSucces;
         public event Action<string>? DeleteCourseFailed;
@@ -49,8 +50,9 @@ namespace AutoSystem_CourseWork_.ViewModel
             set
             {
                 Set(ref indexCourse, value);
-                TestsList = new ObservableCollection<ITest>(dataManager.GetTests(0));
-                QuestionsList = new ObservableCollection<IQuestion>(dataManager.GetQuestions(0, 0));
+                IndexTest = 0;
+                TestsList = new ObservableCollection<ITest>(dataManager.GetTests(IndexCourse));
+                QuestionsList = new ObservableCollection<IQuestion>(dataManager.GetQuestions(IndexCourse, IndexTest));
             }
         }
 
@@ -83,6 +85,8 @@ namespace AutoSystem_CourseWork_.ViewModel
         public void RefreshCourses()
         {
             CoursesList = new ObservableCollection<ICourse>(this.dataManager.CoursesRepository.GetCourses());
+            TestsList = new ObservableCollection<ITest>(dataManager.GetTests(IndexCourse));
+            QuestionsList = new ObservableCollection<IQuestion>(dataManager.GetQuestions(IndexCourse, IndexTest));
         }
 
         private void DeleteCourse()
@@ -97,6 +101,18 @@ namespace AutoSystem_CourseWork_.ViewModel
             }
         }
 
+        private void DeleteTest()
+        {
+            if (dataManager.TryDeleteTest(CoursesList[IndexCourse],IndexTest))
+            {
+                DeleteTestSucces?.Invoke();
+            }
+            else
+            {
+                DeleteTestFailed?.Invoke("Ошибка при удалении!");
+            }
+        }
+
         public ICommand DeleteCourseCommand
         {
             get
@@ -104,6 +120,17 @@ namespace AutoSystem_CourseWork_.ViewModel
                 return new Command(() =>
                 {
                     DeleteCourse();
+                });
+            }
+        }
+
+        public ICommand DeleteTestCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    DeleteTest();
                 });
             }
         }

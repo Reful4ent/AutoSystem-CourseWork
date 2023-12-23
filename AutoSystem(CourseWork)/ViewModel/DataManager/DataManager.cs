@@ -109,5 +109,10 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         {
             return testsQustionService.DeleteCourse(number, ref coursesRepository,ref particulalUser);
         }
+
+        public bool TryDeleteTest(ICourse course ,int number)
+        {
+            return testsQustionService.DeleteTest(course , number, ref coursesRepository, ref particulalUser);
+        }
     }
 }
