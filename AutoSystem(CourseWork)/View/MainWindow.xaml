@@ -37,7 +37,7 @@
         
         <Grid x:Name="Courses" Grid.Row="2">
             <ScrollViewer>
-                <ListBox x:Name="My_Courses" ItemsSource="{Binding Courses}">
+                <ListBox x:Name="My_Courses" ItemsSource="{Binding Courses}" SelectedIndex="{Binding Index}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Style="{StaticResource ResourceKey=MyCourse_Style}">

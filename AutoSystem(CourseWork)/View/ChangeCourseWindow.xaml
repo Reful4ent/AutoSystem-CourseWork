@@ -22,10 +22,12 @@
         </Grid.RowDefinitions>
 
         <Grid x:Name="Navbar" MouseLeftButtonDown="Navbar_MouseLeftButtonDown" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource ResourceKey=Navbar}">
-            <StackPanel Orientation="Horizontal" x:Name="Navbar_Panel">
-                <Image x:Name="Minimize" MouseDown="Minimize_MouseDown" Source="/AutoSystem(CourseWork);component/View/Images/MinWindow.png" Style="{StaticResource ResourceKey=Minimize_Button}"></Image>
-                <Path x:Name="Exit" MouseDown="Exit_MouseDown" Style="{StaticResource ResourceKey=Exit_Button}"  Data="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></Path>
-            </StackPanel>
+            <Border x:Name="Navbar_Border" Style="{StaticResource ResourceKey=Navbar_Border}">
+                <StackPanel Orientation="Horizontal" x:Name="Navbar_Panel">
+                    <Image x:Name="Minimize" MouseDown="Minimize_MouseDown" Source="/AutoSystem(CourseWork);component/View/Images/MinWindow.png" Style="{StaticResource ResourceKey=Minimize_Button}"></Image>
+                    <Path x:Name="Exit" MouseDown="Exit_MouseDown" Style="{StaticResource ResourceKey=Exit_Button}"  Data="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></Path>
+                </StackPanel>
+            </Border>
         </Grid>
 
         <Grid x:Name="Courses_List" Grid.Row="1" Grid.Column="0">
@@ -37,7 +39,9 @@
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="183.33"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Курсы" Style="{StaticResource ResourceKey=CoursesNaming_Text}"></TextBlock>
+            <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="0"></Border>
+            <TextBlock Grid.Row="0" Text="Курсы" Style="{StaticResource ResourceKey=Naming_Text}"></TextBlock>
+            <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="1"></Border>
             <ListBox x:Name="List_Of_Courses" Grid.Row="1" ItemsSource="{Binding CoursesList}" SelectedIndex="{Binding IndexCourse}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -54,7 +58,9 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            <TextBlock Text="Тесты" Grid.Row="2"></TextBlock>
+            <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="2"></Border>
+            <TextBlock Text="Тесты" Grid.Row="2" Style="{StaticResource ResourceKey=Naming_Text}"></TextBlock>
+            <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="3"></Border>
             <ListBox x:Name="List_Of_Tests" Grid.Row="3" ItemsSource="{Binding TestsList}" SelectedIndex="{Binding IndexTest}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -69,7 +75,9 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock Text="Вопросы" Grid.Row="4"></TextBlock>
+            <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="4"></Border>
+            <TextBlock Text="Вопросы" Grid.Row="4" Style="{StaticResource ResourceKey=Naming_Text}"></TextBlock>
+            <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="5"></Border>
             <ListBox x:Name="List_Of_Questions" Grid.Row="5" ItemsSource="{Binding QuestionsList}" SelectedIndex="{Binding IndexQuestion}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -85,14 +93,12 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
-        
+        <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="6"></Border>
         <Grid x:Name="Courses_Add" Grid.Row="2" Grid.Column="0">
-            <Button x:Name="Course_Add_Button" Content="Добавить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command=""></Button>
+            <Button x:Name="Course_Add_Button" Content="Удалить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command=""></Button>
         </Grid>
 
-        <Grid x:Name="CourseRedactor" Grid.Row="1" Grid.Column="1">
-            
-        </Grid>
+      
 
     </Grid>
 </Window>
