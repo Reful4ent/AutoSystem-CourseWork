@@ -11,12 +11,12 @@ using System.IO;
 
 namespace AutoSystem_CourseWork_.Data.CoursesSerialization
 {
-    public class CoursesRepository : IBaseRepository<Course>
+    public class CoursesRepository : IBaseRepository<ICourse>
     {
-        private List<Course> _courses = new();
+        private List<ICourse> _courses = new();
         private string path = string.Empty;
 
-        public List<Course> GetCourses() => _courses;
+        public List<ICourse> GetCourses() => _courses;
         public CoursesRepository(string path)
         {
             this.path = path;
@@ -24,7 +24,7 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
                 throw new System.Exception("Путь сохранения не задан или задан неверно!");
         }
 
-        public bool Add(Course course)
+        public bool Add(ICourse course)
         {
             if (course == null || _courses.Contains(course)) return false;
             var CheckSimilary = from selectCourse in _courses
@@ -35,7 +35,7 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
             return true;
         }
 
-        public bool Delete(Course course)
+        public bool Delete(ICourse course)
         {
             if (course == null) return false;
             if (_courses.Contains(course))
@@ -46,7 +46,7 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
             return false;
         }
 
-        public bool Update(Course coursed)
+        public bool Update(ICourse coursed)
         {
             for (int i = 0; i < _courses.Count; i++)
             {
@@ -75,7 +75,7 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
             using var reader = new StreamReader(stream);
             string parseJson = reader.ReadToEnd();
             if (parseJson == null) return false;
-            _courses = JsonConvert.DeserializeObject<List<Course>>(parseJson, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All });
+            _courses = JsonConvert.DeserializeObject<List<ICourse>>(parseJson, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All });
             return true;
         }
 

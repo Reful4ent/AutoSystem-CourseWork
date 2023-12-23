@@ -27,7 +27,27 @@ namespace AutoSystem_CourseWork_.View
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
             DataContext = new ChangeCoursesVM(this.dataManager =  dataManager);
+            if(DataContext is ChangeCoursesVM changeCoursesVM)
+            {
+                changeCoursesVM.DeleteCourseSucces += RefreshWindow;
+                changeCoursesVM.DeleteCourseFailed += OpenErrorWindow;
+            }
         }
+
+        public void RefreshWindow()
+        {
+            if (DataContext is ChangeCoursesVM changeCoursesVM)
+            {
+                changeCoursesVM.RefreshCourses();
+            }
+        }
+
+        public void OpenErrorWindow(string text)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(text);
+            errorWindow.ShowDialog();
+        }
+
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -35,7 +55,6 @@ namespace AutoSystem_CourseWork_.View
             mainWindow.Show();
             this.Close();
         }
-
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();

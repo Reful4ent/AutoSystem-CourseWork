@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoSystem_CourseWork_.Model.Сourse.Test.Questions;
+using AutoSystem_CourseWork_.Model;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 {
@@ -14,8 +15,9 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
     {
         public List<ITest> GetTests(int number,ref CoursesRepository coursesRepository)
         {
-            List<Course> courses = coursesRepository.GetCourses();
+            List<ICourse> courses = coursesRepository.GetCourses();
             List<ITest> tests = new List<ITest>();
+            if (courses.Count == 0) return tests;
             for (int i = 0; i < courses[number].Tests.Count; i++) 
             {
                 tests.Add(courses[number].Tests[i]);
@@ -24,14 +26,23 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
         }
         public List<IQuestion> GetQuestions(int numberCourse, int numberTest, ref CoursesRepository coursesRepository)
         {
-            List<Course> courses = coursesRepository.GetCourses();
-            List<ITest> tests = courses[numberCourse].Tests;
             List<IQuestion> questions = new List<IQuestion>();
-            for(int i = 0;i < tests[numberTest].questions.Count;i++) 
+            List<ICourse> courses = coursesRepository.GetCourses();
+            if (courses.Count == 0) return questions;
+            List<ITest> tests = courses[numberCourse].Tests;
+            if (tests.Count == 0) return questions;
+            for (int i = 0;i < tests[numberTest].questions.Count;i++) 
             {
                 questions.Add(tests[numberTest].questions[i]);
             }
             return questions;
+        }
+
+        public bool DeleteCourse(int number, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        {
+            if (!ParticularUser.DeleteCourse(coursesRepository.GetCourses(),number)) return false;
+            coursesRepository.Save();
+            return true;
         }
     }
 }

@@ -12,7 +12,7 @@
     </Window.Resources>
     <Grid Style="{StaticResource ResourceKey=Background_Window}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="540"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -94,8 +94,12 @@
             </ListBox>
         </Grid>
         <Border Style="{StaticResource ResourceKey=Column_Border}" Grid.Row="6"></Border>
-        <Grid x:Name="Courses_Add" Grid.Row="2" Grid.Column="0">
-            <Button x:Name="Course_Add_Button" Content="Удалить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command=""></Button>
+        <Grid x:Name="Courses_Delete" Grid.Row="2" Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Course_Delete_Button" Content="Удалить курс" Style="{StaticResource ResourceKey=Button_style}" Command="{Binding DeleteCourseCommand}"></Button>
+                <Button x:Name="Test_Delete_Button" Content="Удалить тест" Style="{StaticResource ResourceKey=Button_style}" Command=""></Button>
+                <Button x:Name="Question_Delete_Button" Content="Удалить вопрос" Style="{StaticResource ResourceKey=Button_style}" Command=""></Button>
+            </StackPanel>
         </Grid>
 
       

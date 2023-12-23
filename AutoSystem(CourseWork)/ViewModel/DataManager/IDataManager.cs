@@ -31,5 +31,6 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public bool TryChangeUserRole(int number, int Role_Id);
         public List<ITest> GetTests(int number);
         public List<IQuestion> GetQuestions(int numberCourse, int numberTest);
+        public bool TryDeleteCourse(int number);
     }
 }
