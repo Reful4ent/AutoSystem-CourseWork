@@ -87,5 +87,12 @@ namespace AutoSystem_CourseWork_.View
             ChangeUserRepositoryWindow changeUserRepositoryWindow = new ChangeUserRepositoryWindow(dataManager);
             changeUserRepositoryWindow.ShowDialog();
         }
+
+        private void AddPanel_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeCourseWindow changeCourseWindow = new ChangeCourseWindow(dataManager);
+            changeCourseWindow.Show();
+            this.Close();
+        }
     }
 }
