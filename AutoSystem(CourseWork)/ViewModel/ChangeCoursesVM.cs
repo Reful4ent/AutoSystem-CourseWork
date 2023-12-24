@@ -12,12 +12,15 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Serialization;
 using System.Windows.Controls;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
     public class ChangeCoursesVM : BasicVM
     {
         IDataManager dataManager;
+        IServiceManager serviceManager;
+
         private ObservableCollection<ICourse> coursesList;
         private int indexCourse = 0;
         private ObservableCollection<ITest> testsList;
@@ -46,12 +49,13 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action? AddAnswerQuestionSucces;
         public event Action<string>? AddAnswerQuestionFailed;
 
-        public ChangeCoursesVM(IDataManager dataManager)
+        public ChangeCoursesVM(IDataManager dataManager, IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
+            this.serviceManager = serviceManager;
             CoursesList = new ObservableCollection<ICourse>(this.dataManager.CoursesRepository.GetCourses());
-            TestsList = new ObservableCollection<ITest>(this.dataManager.GetTests(IndexCourse));
-            QuestionsList = new ObservableCollection<IQuestion>(this.dataManager.GetQuestions(IndexCourse, IndexTest));
+            TestsList = new ObservableCollection<ITest>(this.serviceManager.GetTests(IndexCourse));
+            QuestionsList = new ObservableCollection<IQuestion>(this.serviceManager.GetQuestions(IndexCourse, IndexTest));
         }
 
         public ObservableCollection<ICourse> CoursesList
@@ -66,8 +70,8 @@ namespace AutoSystem_CourseWork_.ViewModel
             {
                 Set(ref indexCourse, value);
                 IndexTest = 0;
-                TestsList = new ObservableCollection<ITest>(dataManager.GetTests(IndexCourse));
-                QuestionsList = new ObservableCollection<IQuestion>(dataManager.GetQuestions(IndexCourse, IndexTest));
+                TestsList = new ObservableCollection<ITest>(serviceManager.GetTests(IndexCourse));
+                QuestionsList = new ObservableCollection<IQuestion>(serviceManager.GetQuestions(IndexCourse, IndexTest));
             }
         }
 
@@ -82,7 +86,7 @@ namespace AutoSystem_CourseWork_.ViewModel
             set
             {
                 Set(ref indexTest, value);
-                QuestionsList = new ObservableCollection<IQuestion>(dataManager.GetQuestions(IndexCourse,IndexTest));
+                QuestionsList = new ObservableCollection<IQuestion>(serviceManager.GetQuestions(IndexCourse, IndexTest));
             }
         }
 
@@ -140,13 +144,13 @@ namespace AutoSystem_CourseWork_.ViewModel
         public void RefreshCourses()
         {
             CoursesList = new ObservableCollection<ICourse>(this.dataManager.CoursesRepository.GetCourses());
-            TestsList = new ObservableCollection<ITest>(dataManager.GetTests(IndexCourse));
-            QuestionsList = new ObservableCollection<IQuestion>(dataManager.GetQuestions(IndexCourse, IndexTest));
+            TestsList = new ObservableCollection<ITest>(serviceManager.GetTests(IndexCourse));
+            QuestionsList = new ObservableCollection<IQuestion>(serviceManager.GetQuestions(IndexCourse, IndexTest));
         }
 
         private void DeleteCourse()
         {
-            if(dataManager.TryDeleteCourse(IndexCourse))
+            if(serviceManager.TryDeleteCourse(IndexCourse))
             {
                 DeleteCourseSucces?.Invoke();
             }
@@ -158,7 +162,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void DeleteTest()
         {
-            if (dataManager.TryDeleteTest(CoursesList[IndexCourse],IndexTest))
+            if (serviceManager.TryDeleteTest(CoursesList[IndexCourse], IndexTest))
             {
                 DeleteTestSucces?.Invoke();
             }
@@ -170,7 +174,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void DeleteQuestion()
         {
-            if (dataManager.TryDeleteQuestion(CoursesList[indexCourse], TestsList[IndexTest], IndexQuestion))
+            if (serviceManager.TryDeleteQuestion(CoursesList[indexCourse], TestsList[IndexTest], IndexQuestion))
             {
                 DeleteQuestionSucces?.Invoke();
             }
@@ -182,7 +186,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void AddCourse()
         {
-            if (dataManager.TryAddCourse(Name_Of_Course, (CourseTypeEnum)(CourseType)))
+            if (serviceManager.TryAddCourse(Name_Of_Course, (CourseTypeEnum)(CourseType)))
             {
                 AddCourseSucces?.Invoke();
             }
@@ -194,7 +198,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void AddTest()
         {
-            if(dataManager.TryAddTest(IndexCourse, Name_Of_Test, (CourseTypeEnum)(TestType)))
+            if(serviceManager.TryAddTest(IndexCourse, Name_Of_Test, (CourseTypeEnum)(TestType)))
             {
                 AddTestSucces?.Invoke();
             }
@@ -206,7 +210,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         public void AddAnswerQuestion()
         {
-            if(dataManager.TryAddAnswerQuestion(IndexCourse,IndexTest,Question_Text,Answer_Text, (CourseTypeEnum)(QuestType)))
+            if(serviceManager.TryAddAnswerQuestion(IndexCourse, IndexTest, Question_Text, Answer_Text, (CourseTypeEnum)(QuestType)))
             {
                 AddAnswerQuestionSucces?.Invoke();
             }

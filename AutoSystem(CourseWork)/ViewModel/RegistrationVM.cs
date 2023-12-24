@@ -1,5 +1,6 @@
 ﻿using AutoSystem_CourseWork_.ViewModel.Commands;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace AutoSystem_CourseWork_.ViewModel
     public class RegistrationVM : BasicVM
     {
         IDataManager dataManager;
+        IServiceManager serviceManager;
 
         string name = string.Empty;
         string login = string.Empty;
@@ -21,9 +23,10 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action? RegistrationSucces;
         public event Action<string>? RegistrationFailed;
 
-        public RegistrationVM(IDataManager dataManager)
+        public RegistrationVM(IDataManager dataManager,IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
+            this.serviceManager = serviceManager;
         }
 
         public string Name
@@ -36,7 +39,8 @@ namespace AutoSystem_CourseWork_.ViewModel
             get => login;
             set => Set(ref login, value);
         }
-        public string Password        {
+        public string Password        
+        {
             get => password;
             set => Set(ref password, value);
         }
@@ -49,9 +53,9 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void StartRegistr()
         {
-            if (dataManager.TryRegistration(name,login,password,passwordRepeat))
+            if (serviceManager.TryRegistration(Name,Login,Password,PasswordRepeat))
             {
-                dataManager.TryLogIn(login, password);
+                serviceManager.TryLogIn(Login, Password);
                 RegistrationSucces?.Invoke();
             }
             else

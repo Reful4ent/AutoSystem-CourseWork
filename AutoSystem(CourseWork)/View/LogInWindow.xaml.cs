@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AutoSystem_CourseWork_.ViewModel;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -22,11 +23,12 @@ namespace AutoSystem_CourseWork_.View
     public partial class LogInWindow : Window
     {
         private IDataManager dataManager;
-        public LogInWindow(IDataManager dataManager)
+        private IServiceManager serviceManager;
+        public LogInWindow(IDataManager dataManager,IServiceManager serviceManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
-            DataContext = new LogInVM(this.dataManager = dataManager);
+            DataContext = new LogInVM(this.dataManager = dataManager,this.serviceManager=serviceManager);
             if (DataContext is LogInVM logInVM)
             {
                 logInVM.LogInSucces += OpenMainWindow;
@@ -37,7 +39,7 @@ namespace AutoSystem_CourseWork_.View
 
         private void OpenMainWindow()
         {
-            MainWindow mainWindow = new MainWindow(dataManager);
+            MainWindow mainWindow = new MainWindow(dataManager, serviceManager);
             mainWindow.Show();
             this.Close();
         }
@@ -50,7 +52,7 @@ namespace AutoSystem_CourseWork_.View
 
         private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
-            RegistrationWindow registrationWindow = new RegistrationWindow(dataManager);
+            RegistrationWindow registrationWindow = new RegistrationWindow(dataManager,serviceManager);
             registrationWindow.Show();
             this.Close();
         }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -23,11 +24,12 @@ namespace AutoSystem_CourseWork_.View
     public partial class ChangeUserRepositoryWindow : Window
     {
         IDataManager dataManager;
-        public ChangeUserRepositoryWindow(IDataManager dataManager)
+        IServiceManager serviceManager;
+        public ChangeUserRepositoryWindow(IDataManager dataManager, IServiceManager serviceManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
-            DataContext = new ChangeUserRepositoryVM(this.dataManager = dataManager);
+            DataContext = new ChangeUserRepositoryVM(this.dataManager = dataManager,this.serviceManager = serviceManager);
             if(DataContext is  ChangeUserRepositoryVM changeUserRepositoryVM)
             {
                 changeUserRepositoryVM.DeleteSucces += RefreshWindow;

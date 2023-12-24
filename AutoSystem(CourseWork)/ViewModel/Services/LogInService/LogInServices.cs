@@ -11,23 +11,18 @@ using AutoSystem_CourseWork_.Model;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.LogInService
 {
-    internal class LogInService : ILogIn
+    internal class LogInServices : ILogIn
     {
-        private UserRepository UserRepository;
-        public LogInService(UserRepository UserRepository)
-        {
-            this.UserRepository = UserRepository;
-        }
-
-        public bool TryLogIn(string login, string password,ref User ParticularUser)
+        public static LogInServices Instance() => new LogInServices();
+        public bool TryLogIn(string login, string password, IDataManager dataManager)
         {
             password = Convert.ToBase64String(MD5.HashData(Encoding.UTF8.GetBytes(password)));
-            var tryFind = (from x in UserRepository.GetUsers()
+            var tryFind = (from x in dataManager.UserRepository.GetUsers()
                            where x.Login == login && x.Password == password
                            select x).FirstOrDefault();
             if (tryFind != null)
             {
-                ParticularUser = tryFind;
+                dataManager.ParticularUser = tryFind;
                 return true;
             }
             return false;

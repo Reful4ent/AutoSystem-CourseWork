@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -22,11 +23,12 @@ namespace AutoSystem_CourseWork_.View
     public partial class MainWindow : Window
     {
         IDataManager dataManager;
-        public MainWindow(IDataManager dataManager)
+        IServiceManager serviceManager;
+        public MainWindow(IDataManager dataManager, IServiceManager serviceManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
-            DataContext = new MainVM(this.dataManager = dataManager);
+            DataContext = new MainVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
             if (DataContext is MainVM mainVM)
             {
                 ButtonHide(mainVM.Role_Id);
@@ -61,7 +63,7 @@ namespace AutoSystem_CourseWork_.View
 
         private void Add_Course_Click(object sender, RoutedEventArgs e)
         {
-            CoursesAddList coursesAddList = new CoursesAddList(dataManager);
+            CoursesAddList coursesAddList = new CoursesAddList(dataManager, serviceManager);
             coursesAddList.ShowDialog();
             if(DataContext is MainVM mainVM)
             {
@@ -84,13 +86,13 @@ namespace AutoSystem_CourseWork_.View
 
         private void AdminPanel_Click(object sender, RoutedEventArgs e)
         {
-            ChangeUserRepositoryWindow changeUserRepositoryWindow = new ChangeUserRepositoryWindow(dataManager);
+            ChangeUserRepositoryWindow changeUserRepositoryWindow = new ChangeUserRepositoryWindow(dataManager, serviceManager);
             changeUserRepositoryWindow.ShowDialog();
         }
 
         private void AddPanel_Click(object sender, RoutedEventArgs e)
         {
-            ChangeCourseWindow changeCourseWindow = new ChangeCourseWindow(dataManager);
+            ChangeCourseWindow changeCourseWindow = new ChangeCourseWindow(dataManager, serviceManager);
             changeCourseWindow.Show();
             this.Close();
         }

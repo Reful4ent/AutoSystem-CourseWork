@@ -8,19 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
     public class CoursesAddListVM : BasicVM
     {
         IDataManager dataManager;
+        IServiceManager serviceManager;
         private ObservableCollection<ICourse> coursesList;
         private int index;
         public event Action<string>? AddCourseFailed;
 
-        public CoursesAddListVM(IDataManager dataManager)
+        public CoursesAddListVM(IDataManager dataManager, IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
+            this.serviceManager = serviceManager;
             CoursesList = new ObservableCollection<ICourse>(this.dataManager.CoursesRepository.GetCourses());
         }
 
@@ -37,7 +40,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void AddUserCourse()
         {
-            if (!dataManager.TryAddUserCourse(CoursesList[index]))
+            if (!serviceManager.TryAddUserCourse(CoursesList[index]))
             {
                 AddCourseFailed?.Invoke("У вас уже есть данный курс или курс пустой!");
             }

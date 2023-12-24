@@ -10,14 +10,15 @@ using AutoSystem_CourseWork_.Model.Сourse.Test.Questions;
 using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.Model.Сourse.Test.Answers;
 using static System.Net.Mime.MediaTypeNames;
+using AutoSystem_CourseWork_.ViewModel.DataManager;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 {
-    internal class TestsQustionService : ITestQuestionService
+    internal class TestsQustionServices : ITestQuestionService
     {
-        public List<ITest> GetTests(int number,ref CoursesRepository coursesRepository)
+        public List<ITest> GetTests(int number,IDataManager dataManager)
         {
-            List<ICourse> courses = coursesRepository.GetCourses();
+            List<ICourse> courses = dataManager.CoursesRepository.GetCourses();
             List<ITest> tests = new List<ITest>();
             if (courses.Count == 0 || number >= courses.Count || number < 0) return tests;
             for (int i = 0; i < courses[number].Tests.Count; i++) 
@@ -26,10 +27,10 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             }
             return tests;
         }
-        public List<IQuestion> GetQuestions(int numberCourse, int numberTest, ref CoursesRepository coursesRepository)
+        public List<IQuestion> GetQuestions(int numberCourse, int numberTest, IDataManager dataManager)
         {
             List<IQuestion> questions = new List<IQuestion>();
-            List<ICourse> courses = coursesRepository.GetCourses();
+            List<ICourse> courses = dataManager.CoursesRepository.GetCourses();
             if (courses.Count == 0 || numberCourse >= courses.Count || numberCourse < 0) return questions;
             List<ITest> tests = courses[numberCourse].Tests;
             if (tests.Count == 0 || numberTest >= tests.Count || numberTest<0) return questions;
@@ -40,55 +41,55 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             return questions;
         }
 
-        public bool DeleteCourse(int number, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        public bool DeleteCourse(int number, IDataManager dataManager)
         {
-            if (!ParticularUser.DeleteCourse(coursesRepository.GetCourses(),number)) return false;
-            coursesRepository.Save();
+            if (!dataManager.ParticularUser.DeleteCourse(dataManager.CoursesRepository.GetCourses(),number)) return false;
+            dataManager.CoursesRepository.Save();
             return true;
         }
 
-        public bool DeleteTest(ICourse course, int number, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        public bool DeleteTest(ICourse course, int number, IDataManager dataManager)
         {
-            if(!ParticularUser.DeleteTest(course,number)) return false;
-            if(!coursesRepository.Update(course)) return false;
-            coursesRepository.Save();
+            if(!dataManager.ParticularUser.DeleteTest(course,number)) return false;
+            if(!dataManager.CoursesRepository.Update(course)) return false;
+            dataManager.CoursesRepository.Save();
             return true;
         }
 
-        public bool DeleteQuestion(ICourse course, ITest test, int number, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        public bool DeleteQuestion(ICourse course, ITest test, int number, IDataManager dataManager)
         {
-            if (!ParticularUser.DeleteQuestionAndAnswer(course.Tests[course.Tests.IndexOf(test)],number)) return false;
-            if (!coursesRepository.Update(course)) return false;
-            coursesRepository.Save();
+            if (!dataManager.ParticularUser.DeleteQuestionAndAnswer(course.Tests[course.Tests.IndexOf(test)],number)) return false;
+            if (!dataManager.CoursesRepository.Update(course)) return false;
+            dataManager.CoursesRepository.Save();
             return true;
         }
 
-        public bool AddCourse(string name, CourseTypeEnum courseTypeEnum, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        public bool AddCourse(string name, CourseTypeEnum courseTypeEnum, IDataManager dataManager)
         {
             if (String.IsNullOrEmpty(name)) return false;
             List<ITest> tests = new List<ITest>();
-            Course course = new(Guid.NewGuid(),name,ParticularUser.Name,courseTypeEnum,tests);
-            if (!coursesRepository.Add(course)) return false;
-            coursesRepository.Save();
+            Course course = new(Guid.NewGuid(),name, dataManager.ParticularUser.Name,courseTypeEnum,tests);
+            if (!dataManager.CoursesRepository.Add(course)) return false;
+            dataManager.CoursesRepository.Save();
             return true;
         }
-        public bool AddTest(int number, string name,CourseTypeEnum courseTypeEnum, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        public bool AddTest(int number, string name,CourseTypeEnum courseTypeEnum, IDataManager dataManager)
         {
             if (String.IsNullOrEmpty(name)) return false;
-            List<ICourse> courses = coursesRepository.GetCourses();
+            List<ICourse> courses = dataManager.CoursesRepository.GetCourses();
             List<IQuestion> questions = new List<IQuestion>();
             List<IAnswer> answers = new List<IAnswer>();
             if (courses.Count == 0 || number >= courses.Count || number < 0) return false;
             TestOfCourse test = new(Guid.NewGuid(), name, courseTypeEnum, answers, questions);
-            if (!ParticularUser.AddTest(courses[number], test)) return false;
-            if (!coursesRepository.Update(courses[number])) return false;
-            coursesRepository.Save();
+            if (!dataManager.ParticularUser.AddTest(courses[number], test)) return false;
+            if (!dataManager.CoursesRepository.Update(courses[number])) return false;
+            dataManager.CoursesRepository.Save();
             return true;
         }
 
-        public bool AddQuestionAnswer(int numberCourse, int numberTest,string questionText,string answerText, CourseTypeEnum courseTypeEnum,ref CoursesRepository coursesRepository, ref User ParticularUser)
+        public bool AddQuestionAnswer(int numberCourse, int numberTest,string questionText,string answerText, CourseTypeEnum courseTypeEnum, IDataManager dataManager)
         {
-            List<ICourse> courses = coursesRepository.GetCourses();
+            List<ICourse> courses = dataManager.CoursesRepository.GetCourses();
             if (courses.Count == 0 || numberCourse >= courses.Count || numberCourse < 0) return false;
             List<ITest> tests = courses[numberCourse].Tests;
             if (tests.Count == 0 || numberTest >= tests.Count || numberTest < 0) return false;
@@ -96,9 +97,9 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             Guid AnswerQuestionId = Guid.NewGuid();
             TextAnswer textAnswer = new(AnswerQuestionId, answerText, courseTypeEnum);
             TextQuestion textQuestion = new(AnswerQuestionId, questionText, courseTypeEnum);
-            if (!ParticularUser.AddQuestionAndAnswer(tests[numberTest], textQuestion, textAnswer)) return false;
-            if (!coursesRepository.Update(courses[numberCourse])) return false;
-            coursesRepository.Save();
+            if (!dataManager.ParticularUser.AddQuestionAndAnswer(tests[numberTest], textQuestion, textAnswer)) return false;
+            if (!dataManager.CoursesRepository.Update(courses[numberCourse])) return false;
+            dataManager.CoursesRepository.Save();
             return true;
         }
     }

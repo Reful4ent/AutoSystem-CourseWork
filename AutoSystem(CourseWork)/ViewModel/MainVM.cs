@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
     public class MainVM : BasicVM
     {
         IDataManager dataManager;
+        IServiceManager serviceManager;
 
         private string name = string.Empty;
         private string role = string.Empty;
@@ -25,9 +27,10 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action? DeleteSucces;
         public event Action<string>? DeleteFailed;
 
-        public MainVM(IDataManager dataManager)
+        public MainVM(IDataManager dataManager,IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
+            this.serviceManager = serviceManager;
             Name = this.dataManager.ParticularUser.Name;
             Role_Id = this.dataManager.ParticularUser.Role_Id;
             Role = UserRole.GetName(typeof(UserRole), (UserRole)(this.dataManager.ParticularUser.Role_Id));
@@ -71,7 +74,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void DeleteUserCourse()
         {
-            if (dataManager.TryRemoveUserCourse(Index))
+            if (serviceManager.TryRemoveUserCourse(Index))
             {
                 DeleteSucces?.Invoke();
             }

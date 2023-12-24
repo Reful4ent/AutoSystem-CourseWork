@@ -11,12 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
     public class ChangeUserRepositoryVM : BasicVM
     {
         IDataManager dataManager;
+        IServiceManager serviceManager;
 
         private ObservableCollection<User> userList;
         private int index;
@@ -28,9 +30,10 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action? ChangeRoleSucces;
         public event Action<string>? ChangeRoleFailed;
 
-        public ChangeUserRepositoryVM(IDataManager dataManager)
+        public ChangeUserRepositoryVM(IDataManager dataManager, IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
+            this.serviceManager = serviceManager;
             UserList = new ObservableCollection<User>(this.dataManager.UserRepository.GetUsers());
         }
 
@@ -58,7 +61,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void DeleteUser()
         {
-            if (dataManager.TryDeleteUser(Index))
+            if (serviceManager.TryDeleteUser(Index))
             {
                 DeleteSucces?.Invoke();
             }
@@ -70,7 +73,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void ChangeUserRole()
         {
-            if (dataManager.TryChangeUserRole(Index, Role_Id))
+            if (serviceManager.TryChangeUserRole(Index, Role_Id))
             {
                 ChangeRoleSucces?.Invoke();
             }

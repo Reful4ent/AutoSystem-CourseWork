@@ -36,6 +36,18 @@
         "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
         "$values": []
       }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "12153dd0-34c0-4b65-a504-6fc69a1c3445",
+      "Name": "dsdfafs",
+      "Login": "sdfasfs",
+      "Password": "GqusbQaO72p7rT/fUKBcyA==",
+      "Role_Id": 0,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
     }
   ]
 }

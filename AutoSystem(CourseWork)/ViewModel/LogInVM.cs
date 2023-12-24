@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
 using AutoSystem_CourseWork_.ViewModel.Commands;
+using AutoSystem_CourseWork_.ViewModel.Services.LogInService;
+using AutoSystem_CourseWork_.ViewModel.Services;
+using AutoSystem_CourseWork_.Data.UserSerialization;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
@@ -15,13 +18,15 @@ namespace AutoSystem_CourseWork_.ViewModel
         string login = string.Empty;
         string password = string.Empty;
         private IDataManager dataManager;
+        private IServiceManager serviceManager;
 
         public event Action? LogInSucces;
         public event Action<string>? LogInFailed;
 
-        public LogInVM(IDataManager dataManager)
+        public LogInVM(IDataManager dataManager, IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
+            this.serviceManager = serviceManager;
         }
         public string Login
         {
@@ -37,7 +42,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void StartLogIn()
         {
-            if(dataManager.TryLogIn(Login, Password))
+            if(serviceManager.TryLogIn(Login,Password))
             {
                 LogInSucces?.Invoke();
             }

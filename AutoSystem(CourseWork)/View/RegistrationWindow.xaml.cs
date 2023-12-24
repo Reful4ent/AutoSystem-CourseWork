@@ -13,6 +13,7 @@ using AutoSystem_CourseWork_.ViewModel;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -22,11 +23,11 @@ namespace AutoSystem_CourseWork_.View
     public partial class RegistrationWindow : Window
     {
         IDataManager dataManager;
-        public RegistrationWindow(IDataManager dataManager)
+        IServiceManager serviceManager;
+        public RegistrationWindow(IDataManager dataManager, IServiceManager serviceManager)
         {
             InitializeComponent();
-            this.dataManager = dataManager;
-            DataContext = new RegistrationVM(this.dataManager);
+            DataContext = new RegistrationVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
             if(DataContext is RegistrationVM registrationVM)
             {
@@ -37,13 +38,13 @@ namespace AutoSystem_CourseWork_.View
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            LogInWindow logInWindow = new LogInWindow(dataManager);
+            LogInWindow logInWindow = new LogInWindow(dataManager,serviceManager);
             logInWindow.Show();
             this.Close();
         }
         public void OpenMainWindow()
         {
-            MainWindow mainWindow = new MainWindow(dataManager);
+            MainWindow mainWindow = new MainWindow(dataManager,serviceManager);
             mainWindow.Show();
             this.Close();
         }

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -22,11 +23,12 @@ namespace AutoSystem_CourseWork_.View
     public partial class ChangeCourseWindow : Window
     {
         IDataManager dataManager;
-        public ChangeCourseWindow(IDataManager dataManager)
+        IServiceManager serviceManager;
+        public ChangeCourseWindow(IDataManager dataManager,IServiceManager serviceManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
-            DataContext = new ChangeCoursesVM(this.dataManager =  dataManager);
+            DataContext = new ChangeCoursesVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
             if(DataContext is ChangeCoursesVM changeCoursesVM)
             {
                 changeCoursesVM.DeleteCourseSucces += RefreshWindow;
@@ -62,7 +64,7 @@ namespace AutoSystem_CourseWork_.View
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(dataManager);
+            MainWindow mainWindow = new MainWindow(dataManager,serviceManager);
             mainWindow.Show();
             this.Close();
         }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
+using AutoSystem_CourseWork_.ViewModel.Services;
 
 namespace AutoSystem_CourseWork_.View
 {
@@ -23,11 +24,12 @@ namespace AutoSystem_CourseWork_.View
     public partial class CoursesAddList : Window
     {
         IDataManager dataManager;
-        public CoursesAddList(IDataManager dataManager)
+        IServiceManager serviceManager;
+        public CoursesAddList(IDataManager dataManager,IServiceManager serviceManager)
         {
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
-            DataContext = new CoursesAddListVM(this.dataManager = dataManager);
+            DataContext = new CoursesAddListVM(this.dataManager = dataManager,this.serviceManager = serviceManager);
             if (DataContext is CoursesAddListVM coursesAddListVM)
             {
                 coursesAddListVM.AddCourseFailed += OpenErrorWindow;
