@@ -51,6 +51,14 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             if(!coursesRepository.Update(course)) return false;
             coursesRepository.Save();
             return true;
+        }
+
+        public bool DeleteQuestion(ICourse course, ITest test, int number, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        {
+            if (!ParticularUser.DeleteQuestionAndAnswer(course.Tests[course.Tests.IndexOf(test)],number)) return false;
+            if (!coursesRepository.Update(course)) return false;
+            coursesRepository.Save();
+            return true;
 
         }
     }

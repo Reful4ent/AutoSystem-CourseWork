@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace AutoSystem_CourseWork_.ViewModel.DataManager
 {
@@ -113,6 +114,11 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         public bool TryDeleteTest(ICourse course ,int number)
         {
             return testsQustionService.DeleteTest(course , number, ref coursesRepository, ref particulalUser);
+        }
+
+        public bool TryDeleteQuestion(ICourse course ,ITest test,int number)
+        {
+            return testsQustionService.DeleteQuestion(course, test, number, ref coursesRepository,ref particulalUser);
         }
     }
 }

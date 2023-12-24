@@ -98,7 +98,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="Course_Delete_Button" Content="Удалить курс" Style="{StaticResource ResourceKey=Button_style}" Command="{Binding DeleteCourseCommand}"></Button>
                 <Button x:Name="Test_Delete_Button" Content="Удалить тест" Style="{StaticResource ResourceKey=Button_style}" Command="{Binding DeleteTestCommand}"></Button>
-                <Button x:Name="Question_Delete_Button" Content="Удалить вопрос" Style="{StaticResource ResourceKey=Button_style}" Command=""></Button>
+                <Button x:Name="Question_Delete_Button" Content="Удалить вопрос" Style="{StaticResource ResourceKey=Button_style}" Command="{Binding DeleteQuestionCommand}"></Button>
             </StackPanel>
         </Grid>
 

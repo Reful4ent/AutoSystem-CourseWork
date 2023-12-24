@@ -113,6 +113,17 @@ namespace AutoSystem_CourseWork_.ViewModel
             }
         }
 
+        private void DeleteQuestion()
+        {
+            if (dataManager.TryDeleteQuestion(CoursesList[indexCourse], TestsList[IndexTest], IndexQuestion))
+            {
+                DeleteQuestionSucces?.Invoke();
+            }
+            else
+            {
+                DeleteQuestionFailed?.Invoke("Ошибка при удалении");
+            }
+        }
         public ICommand DeleteCourseCommand
         {
             get
@@ -135,5 +146,15 @@ namespace AutoSystem_CourseWork_.ViewModel
             }
         }
 
+        public ICommand DeleteQuestionCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    DeleteQuestion();
+                });
+            }
+        }
     }
 }

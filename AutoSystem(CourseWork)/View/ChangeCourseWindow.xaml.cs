@@ -33,6 +33,8 @@ namespace AutoSystem_CourseWork_.View
                 changeCoursesVM.DeleteCourseFailed += OpenErrorWindow;
                 changeCoursesVM.DeleteTestSucces += RefreshWindow;
                 changeCoursesVM.DeleteTestFailed += OpenErrorWindow;
+                changeCoursesVM.DeleteQuestionSucces += RefreshWindow;
+                changeCoursesVM.DeleteQuestionFailed += OpenErrorWindow;
             }
         }
 

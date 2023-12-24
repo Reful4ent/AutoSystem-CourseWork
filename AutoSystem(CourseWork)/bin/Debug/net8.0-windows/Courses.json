@@ -20,12 +20,6 @@
               "$values": [
                 {
                   "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
-                  "Id": "8e150223-b4f1-4281-ac3f-5bf011ff746e",
-                  "Text": "862",
-                  "CourseType": 7
-                },
-                {
-                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
                   "Id": "2f065e7f-4b74-40a0-a75f-170bfa1faba4",
                   "Text": "Олег",
                   "CourseType": 7
@@ -35,12 +29,6 @@
             "questions": {
               "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Questions.IQuestion, AutoSystem(CourseWork)]], System.Private.CoreLib",
               "$values": [
-                {
-                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
-                  "Id": "8e150223-b4f1-4281-ac3f-5bf011ff746e",
-                  "Text": "Какой год считается началом русской государственности?",
-                  "CourseType": 7
-                },
                 {
                   "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
                   "Id": "2f065e7f-4b74-40a0-a75f-170bfa1faba4",
