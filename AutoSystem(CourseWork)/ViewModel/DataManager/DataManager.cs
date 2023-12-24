@@ -125,5 +125,9 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         {
             return testsQustionService.AddCourse(name, courseTypeEnum, ref coursesRepository,ref particulalUser);
         }
+        public bool TryAddTest(int number, string name, CourseTypeEnum courseTypeEnum)
+        {
+            return testsQustionService.AddTest(number, name, courseTypeEnum, ref coursesRepository, ref particulalUser);
+        }
     }
 }

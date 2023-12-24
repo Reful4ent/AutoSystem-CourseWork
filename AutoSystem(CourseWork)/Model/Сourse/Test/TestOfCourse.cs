@@ -63,19 +63,6 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test
             }
             return true;
         }
-        public override string ToString()
-        {
-            string s = null;
-            for(int i =0; i < answers.Count; i++)
-            {
-                s += answers[i].ToString() + "\n\n";
-            }
-            string q = null;
-            for (int i = 0; i < questions.Count; i++)
-            {
-                q += questions[i].ToString() + "\n\n";
-            }
-            return $"Test:\nID: {Id}\nName: {Name}\nType of Course: {CourseType}\n\nQuestions: \n"+q+"\n\nAnswers: \n" + s;
-        }
+       
     }
 }

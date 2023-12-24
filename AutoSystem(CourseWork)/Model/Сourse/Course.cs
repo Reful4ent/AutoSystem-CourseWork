@@ -41,15 +41,5 @@ namespace AutoSystem_CourseWork_.Model.Сourse
             if (number >= Tests.Count || number < 0) return false;
             Tests.RemoveAt(number); return true;
         }
-
-        public override string ToString()
-        {
-            string s = null;
-            for(int i = 0; i < Tests.Count; i++)
-            {
-                s += Tests[i].ToString() + "\n";
-            }
-            return $"Сourse:\nID: {Id}\nName: {Name}\nAuthor name: {AuthorName}\nType of Course: {CourseType}\n\n"+s;
-        }
     }
 }

@@ -25,7 +25,9 @@ namespace AutoSystem_CourseWork_.ViewModel
         private ObservableCollection<IQuestion> questionsList;
         private int indexQuestion = 0;
         private int courseType;
-        private string name = string.Empty;
+        private int testType;
+        private string name_Of_Course = string.Empty;
+        private string name_Of_Test = string.Empty;
 
         public event Action? DeleteCourseSucces;
         public event Action<string>? DeleteCourseFailed;
@@ -35,6 +37,8 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action<string>? DeleteQuestionFailed;
         public event Action? AddCourseSucces;
         public event Action<string>? AddCourseFailed;
+        public event Action? AddTestSucces;
+        public event Action<string>? AddTestFailed;
         public ChangeCoursesVM(IDataManager dataManager)
         {
             this.dataManager = dataManager;
@@ -92,10 +96,21 @@ namespace AutoSystem_CourseWork_.ViewModel
             set => Set(ref courseType, value);
         }
 
-        public string Name
+        public int TestType
         {
-            get => name;
-            set => Set(ref name, value);
+            get => testType;
+            set => Set(ref testType, value);
+        }
+        public string Name_Of_Course
+        {
+            get => name_Of_Course;
+            set => Set(ref name_Of_Course, value);
+        }
+
+        public string Name_Of_Test
+        {
+            get => name_Of_Test;
+            set => Set(ref name_Of_Test, value);
         }
         public Array CourseTypeArray => Enum.GetValues(typeof(CourseTypeEnum));
 
@@ -144,13 +159,25 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void AddCourse()
         {
-            if (dataManager.TryAddCourse(Name, (CourseTypeEnum)(CourseType)))
+            if (dataManager.TryAddCourse(Name_Of_Course, (CourseTypeEnum)(CourseType)))
             {
                 AddCourseSucces?.Invoke();
             }
             else
             {
                 AddCourseFailed?.Invoke("Не удалось добавить курс!");
+            }
+        }
+
+        private void AddTest()
+        {
+            if(dataManager.TryAddTest(IndexCourse, Name_Of_Test, (CourseTypeEnum)(TestType)))
+            {
+                AddTestSucces?.Invoke();
+            }
+            else
+            {
+                AddTestFailed?.Invoke("Не удалось добавить тест!");
             }
         }
 
@@ -183,6 +210,17 @@ namespace AutoSystem_CourseWork_.ViewModel
                 return new Command(() =>
                 {
                     DeleteTest();
+                });
+            }
+        }
+
+        public ICommand AddTestCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    AddTest();
                 });
             }
         }

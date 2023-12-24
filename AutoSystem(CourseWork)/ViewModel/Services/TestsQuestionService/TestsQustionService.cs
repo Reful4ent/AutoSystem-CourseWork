@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoSystem_CourseWork_.Model.Сourse.Test.Questions;
 using AutoSystem_CourseWork_.Model;
+using AutoSystem_CourseWork_.Model.Сourse.Test.Answers;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 {
@@ -63,12 +65,26 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 
         public bool AddCourse(string name, CourseTypeEnum courseTypeEnum, ref CoursesRepository coursesRepository, ref User ParticularUser)
         {
-            if(String.IsNullOrEmpty(name)) return false;
+            if (String.IsNullOrEmpty(name)) return false;
             List<ITest> tests = new List<ITest>();
             Course course = new(Guid.NewGuid(),name,ParticularUser.Name,courseTypeEnum,tests);
-            if(!coursesRepository.Add(course)) return false;
+            if (!coursesRepository.Add(course)) return false;
             coursesRepository.Save();
             return true;
+        }
+        public bool AddTest(int number, string name,CourseTypeEnum courseTypeEnum, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        {
+            if (String.IsNullOrEmpty(name)) return false;
+            List<ICourse> courses = coursesRepository.GetCourses();
+            List<IQuestion> questions = new List<IQuestion>();
+            List<IAnswer> answers = new List<IAnswer>();
+            if (courses.Count == 0 || number >= courses.Count || number < 0) return false;
+            TestOfCourse test = new(Guid.NewGuid(), name, courseTypeEnum, answers, questions);
+            if (!ParticularUser.AddTest(courses[number], test)) return false;
+            if (!coursesRepository.Update(courses[number])) return false;
+            coursesRepository.Save();
+            return true;
+
         }
     }
 }

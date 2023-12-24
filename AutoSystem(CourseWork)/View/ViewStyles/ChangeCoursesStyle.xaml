@@ -74,6 +74,23 @@
         </Setter>
     </Style>
 
+    <Style x:Key="Naming_Test_Text" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#8B008B" Offset="0"></GradientStop>
+                    <GradientStop Color="#0000FF" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <Style x:Key="Courses_List_Style" TargetType="Grid">
         <Setter Property="Width" Value="525"></Setter>
         <Setter Property="Background">

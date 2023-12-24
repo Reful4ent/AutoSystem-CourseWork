@@ -17,9 +17,5 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test.Answers
             Text = text;
             CourseType = courseType;
         }
-        public override string ToString()
-        {
-            return $"Answer:\nID: {Id}\nText: {Text}\nType of Course: {CourseType}";
-        }
     }
 }
