@@ -120,5 +120,10 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         {
             return testsQustionService.DeleteQuestion(course, test, number, ref coursesRepository,ref particulalUser);
         }
+
+        public bool TryAddCourse(string name, CourseTypeEnum courseTypeEnum)
+        {
+            return testsQustionService.AddCourse(name, courseTypeEnum, ref coursesRepository,ref particulalUser);
+        }
     }
 }

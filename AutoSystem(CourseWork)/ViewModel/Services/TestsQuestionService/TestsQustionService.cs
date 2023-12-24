@@ -59,7 +59,16 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             if (!coursesRepository.Update(course)) return false;
             coursesRepository.Save();
             return true;
+        }
 
+        public bool AddCourse(string name, CourseTypeEnum courseTypeEnum, ref CoursesRepository coursesRepository, ref User ParticularUser)
+        {
+            if(String.IsNullOrEmpty(name)) return false;
+            List<ITest> tests = new List<ITest>();
+            Course course = new(Guid.NewGuid(),name,ParticularUser.Name,courseTypeEnum,tests);
+            if(!coursesRepository.Add(course)) return false;
+            coursesRepository.Save();
+            return true;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Serialization;
+using System.Windows.Controls;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
@@ -23,6 +24,8 @@ namespace AutoSystem_CourseWork_.ViewModel
         private int indexTest = 0;
         private ObservableCollection<IQuestion> questionsList;
         private int indexQuestion = 0;
+        private int courseType;
+        private string name = string.Empty;
 
         public event Action? DeleteCourseSucces;
         public event Action<string>? DeleteCourseFailed;
@@ -30,7 +33,8 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action<string>? DeleteTestFailed;
         public event Action? DeleteQuestionSucces;
         public event Action<string>? DeleteQuestionFailed;
-
+        public event Action? AddCourseSucces;
+        public event Action<string>? AddCourseFailed;
         public ChangeCoursesVM(IDataManager dataManager)
         {
             this.dataManager = dataManager;
@@ -82,6 +86,19 @@ namespace AutoSystem_CourseWork_.ViewModel
             set => Set(ref indexQuestion, value);
         }
 
+        public int CourseType
+        {
+            get => courseType;
+            set => Set(ref courseType, value);
+        }
+
+        public string Name
+        {
+            get => name;
+            set => Set(ref name, value);
+        }
+        public Array CourseTypeArray => Enum.GetValues(typeof(CourseTypeEnum));
+
         public void RefreshCourses()
         {
             CoursesList = new ObservableCollection<ICourse>(this.dataManager.CoursesRepository.GetCourses());
@@ -124,6 +141,19 @@ namespace AutoSystem_CourseWork_.ViewModel
                 DeleteQuestionFailed?.Invoke("Ошибка при удалении");
             }
         }
+
+        private void AddCourse()
+        {
+            if (dataManager.TryAddCourse(Name, (CourseTypeEnum)(CourseType)))
+            {
+                AddCourseSucces?.Invoke();
+            }
+            else
+            {
+                AddCourseFailed?.Invoke("Не удалось добавить курс!");
+            }
+        }
+
         public ICommand DeleteCourseCommand
         {
             get
@@ -131,6 +161,17 @@ namespace AutoSystem_CourseWork_.ViewModel
                 return new Command(() =>
                 {
                     DeleteCourse();
+                });
+            }
+        }
+
+        public ICommand AddCourseCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    AddCourse();
                 });
             }
         }
