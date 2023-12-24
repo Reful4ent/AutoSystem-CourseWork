@@ -26,8 +26,12 @@ namespace AutoSystem_CourseWork_.ViewModel
         private int indexQuestion = 0;
         private int courseType;
         private int testType;
+        private int questType;
         private string name_Of_Course = string.Empty;
         private string name_Of_Test = string.Empty;
+        private string question_Text = string.Empty;
+        private string answer_Text = string.Empty;
+
 
         public event Action? DeleteCourseSucces;
         public event Action<string>? DeleteCourseFailed;
@@ -39,6 +43,9 @@ namespace AutoSystem_CourseWork_.ViewModel
         public event Action<string>? AddCourseFailed;
         public event Action? AddTestSucces;
         public event Action<string>? AddTestFailed;
+        public event Action? AddAnswerQuestionSucces;
+        public event Action<string>? AddAnswerQuestionFailed;
+
         public ChangeCoursesVM(IDataManager dataManager)
         {
             this.dataManager = dataManager;
@@ -101,6 +108,11 @@ namespace AutoSystem_CourseWork_.ViewModel
             get => testType;
             set => Set(ref testType, value);
         }
+        public int QuestType
+        {
+            get => questType;
+            set => Set(ref questType, value);
+        }
         public string Name_Of_Course
         {
             get => name_Of_Course;
@@ -111,6 +123,17 @@ namespace AutoSystem_CourseWork_.ViewModel
         {
             get => name_Of_Test;
             set => Set(ref name_Of_Test, value);
+        }
+
+        public string Question_Text
+        {
+            get => question_Text;
+            set => Set(ref question_Text, value);
+        }
+        public string Answer_Text
+        {
+            get => answer_Text;
+            set => Set(ref  answer_Text, value);
         }
         public Array CourseTypeArray => Enum.GetValues(typeof(CourseTypeEnum));
 
@@ -181,6 +204,17 @@ namespace AutoSystem_CourseWork_.ViewModel
             }
         }
 
+        public void AddAnswerQuestion()
+        {
+            if(dataManager.TryAddAnswerQuestion(IndexCourse,IndexTest,Question_Text,Answer_Text, (CourseTypeEnum)(QuestType)))
+            {
+                AddAnswerQuestionSucces?.Invoke();
+            }
+            else
+            {
+                AddAnswerQuestionFailed?.Invoke("Ошибка при удалении!");
+            }
+        }
         public ICommand DeleteCourseCommand
         {
             get
@@ -232,6 +266,16 @@ namespace AutoSystem_CourseWork_.ViewModel
                 return new Command(() =>
                 {
                     DeleteQuestion();
+                });
+            }
+        }
+        public ICommand AddAnswerQuestionCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    AddAnswerQuestion();
                 });
             }
         }

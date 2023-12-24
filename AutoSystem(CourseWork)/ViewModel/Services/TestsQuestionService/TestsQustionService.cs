@@ -84,7 +84,22 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             if (!coursesRepository.Update(courses[number])) return false;
             coursesRepository.Save();
             return true;
+        }
 
+        public bool AddQuestionAnswer(int numberCourse, int numberTest,string questionText,string answerText, CourseTypeEnum courseTypeEnum,ref CoursesRepository coursesRepository, ref User ParticularUser)
+        {
+            List<ICourse> courses = coursesRepository.GetCourses();
+            if (courses.Count == 0 || numberCourse >= courses.Count || numberCourse < 0) return false;
+            List<ITest> tests = courses[numberCourse].Tests;
+            if (tests.Count == 0 || numberTest >= tests.Count || numberTest < 0) return false;
+            if (String.IsNullOrEmpty(questionText) || String.IsNullOrEmpty(answerText)) return false;
+            Guid AnswerQuestionId = Guid.NewGuid();
+            TextAnswer textAnswer = new(AnswerQuestionId, answerText, courseTypeEnum);
+            TextQuestion textQuestion = new(AnswerQuestionId, questionText, courseTypeEnum);
+            if (!ParticularUser.AddQuestionAndAnswer(tests[numberTest], textQuestion, textAnswer)) return false;
+            if (!coursesRepository.Update(courses[numberCourse])) return false;
+            coursesRepository.Save();
+            return true;
         }
     }
 }
