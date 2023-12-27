@@ -24,6 +24,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         private CoursesRepository coursesRepository;
         private User particulalUser = null;
         private ICourse particularCourse = null;
+        private ITest particularTest = null;
 
         public User ParticularUser
         {
@@ -42,6 +43,16 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
             {
                 if (value != null)
                     particularCourse = value;
+            }
+        }
+
+        public ITest ParticularTest
+        {
+            get => particularTest;
+            set
+            {
+                if (value != null)
+                    particularTest = value;
             }
         }
 

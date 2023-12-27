@@ -29,5 +29,6 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
         public bool TryAddTest(int number, string name, string theory, CourseTypeEnum courseTypeEnum);
         public bool TryAddAnswerQuestion(int numberCourse, int numberTest, string questionText, string answerText, CourseTypeEnum courseTypeEnum);
         public bool TrySetCourse(int index);
+        public bool TrySetTest(int index);
     }
 }

@@ -46,7 +46,7 @@
         </Grid>
 
         <Grid x:Name="Courses_Add" Grid.Row="2">
-            <Button x:Name="Test_Choose_Button" Content="Решить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command=""></Button>
+            <Button x:Name="Test_Choose_Button" Content="Решить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command="{Binding SetTestCommand}"></Button>
         </Grid>
     </Grid>
 </Window>

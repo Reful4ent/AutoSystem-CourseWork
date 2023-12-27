@@ -29,8 +29,18 @@ namespace AutoSystem_CourseWork_.View
             InitializeComponent();
             MouseLeftButtonDown += Navbar_MouseLeftButtonDown;
             DataContext = new TestsListVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
+            if(DataContext is TestsListVM testsListVM)
+            {
+                testsListVM.SetTestSucces += 
+            }
         }
 
+        private void OpenSolveTestWindow()
+        {
+             SolveTestWindow solveTestWindow = new SolveTestWindow(dataManager,serviceManager);
+             solveTestWindow.Show();
+             this.Close();
+        }
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
 
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;

@@ -108,5 +108,10 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
         {
             return testQuestionServices.SetCourse(index, dataManager);
         }
+
+        public bool TrySetTest(int index)
+        {
+            return testQuestionServices.SetTest(index, dataManager);
+        }
     }
 }

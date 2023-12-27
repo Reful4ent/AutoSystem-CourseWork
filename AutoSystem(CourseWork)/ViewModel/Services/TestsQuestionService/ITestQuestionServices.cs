@@ -21,5 +21,6 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
         public bool AddTest(int number, string name, string theory, CourseTypeEnum courseTypeEnum, IDataManager dataManager);
         public bool AddQuestionAnswer(int numberCourse, int numberTest, string questionText, string answerText, CourseTypeEnum courseTypeEnum, IDataManager dataManager);
         public bool SetCourse(int index, IDataManager dataManager);
+        public bool SetTest(int indexTest, IDataManager dataManager);
     }
 }

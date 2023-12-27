@@ -28,6 +28,9 @@
     <Compile Update="View\RegistrationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SolveTestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\TestsListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SolveTestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\TestsListWindow.xaml">
