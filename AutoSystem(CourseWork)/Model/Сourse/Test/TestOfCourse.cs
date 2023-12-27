@@ -13,19 +13,21 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test
     {
         public Guid Id { get; }
         public string Name { get; }
+        public string Theory { get; set; }
         public CourseTypeEnum CourseType { get; }
         public List<IAnswer> answers { get; set; }
         public List<IQuestion> questions { get; set; }
 
-        public TestOfCourse(Guid Id, string Name, CourseTypeEnum CourseType, List<IAnswer> answers, List<IQuestion> questions)
+        public TestOfCourse(Guid Id, string Name, string Theory, CourseTypeEnum CourseType, List<IAnswer> answers, List<IQuestion> questions)
         {
             this.Id = Id;
             this.Name = Name;
+            this.Theory = Theory;
             this.CourseType = CourseType;
             this.answers = answers;
             this.questions = questions;
         }
-        
+
         public bool AddQuestionAndAnswer(IQuestion question, IAnswer answer)
         {
             if (answer.Id != question.Id) return false;

@@ -3,7 +3,11 @@ using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.View;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
 using AutoSystem_CourseWork_.ViewModel.Services;
+using AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService;
+using AutoSystem_CourseWork_.ViewModel.Services.ChangeUserRepService;
 using AutoSystem_CourseWork_.ViewModel.Services.LogInService;
+using AutoSystem_CourseWork_.ViewModel.Services.RegistrationService;
+using AutoSystem_CourseWork_.ViewModel.Services.TestsService;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -17,6 +21,12 @@ namespace AutoSystem_CourseWork_
     {
         private IDataManager _dataManager;
         private IServiceManager _serviceManager;
+        private ILogInServices logInServices;
+        private IChangeUserRepServices changeUserRepServices;
+        private IChangeUserCourseServices changeUserCourseServices;
+        private IRegistrationServices registrationServices;
+        private ITestQuestionServices testQuestionServices;
+
         private UserRepository userRepository;
         private CoursesRepository coursesRepository;
         
@@ -26,8 +36,14 @@ namespace AutoSystem_CourseWork_
             string pathCourses = ConfigurationManager.AppSettings["Coursespath"] ?? string.Empty;
             userRepository = new UserRepository(pathUsers);
             coursesRepository = new CoursesRepository(pathCourses);
+
             _dataManager = DataManager.Instance(userRepository, coursesRepository);
-            _serviceManager = ServiceManager.Instance(_dataManager);
+            logInServices = LogInServices.Instance();
+            changeUserRepServices = ChangeUserRepServices.Instance();
+            changeUserCourseServices = ChangeUserCourseServices.Instance();
+            registrationServices = RegistrationServices.Instance();
+            testQuestionServices = TestsQustionServices.Instance();
+            _serviceManager = ServiceManager.Instance(_dataManager,logInServices,changeUserRepServices,changeUserCourseServices,registrationServices,testQuestionServices);
         }
         protected override async void OnStartup(StartupEventArgs e)
         {

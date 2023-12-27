@@ -10,7 +10,176 @@
       "Role_Id": 2,
       "Courses": {
         "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
-        "$values": []
+        "$values": [
+          {
+            "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
+            "Id": "8230447e-a397-4262-9aef-d3189caef74e",
+            "Name": "История России",
+            "AuthorName": "Teacher",
+            "CourseType": 7,
+            "Tests": {
+              "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.ITest, AutoSystem(CourseWork)]], System.Private.CoreLib",
+              "$values": [
+                {
+                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.TestOfCourse, AutoSystem(CourseWork)",
+                  "Id": "2e03768b-2ba1-4809-9ef0-55c59aa2663e",
+                  "Name": "Начало истории России",
+                  "CourseType": 7,
+                  "answers": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Answers.IAnswer, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "8e150223-b4f1-4281-ac3f-5bf011ff746e",
+                        "Text": "862",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "2f065e7f-4b74-40a0-a75f-170bfa1faba4",
+                        "Text": "Олег",
+                        "CourseType": 7
+                      }
+                    ]
+                  },
+                  "questions": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Questions.IQuestion, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "8e150223-b4f1-4281-ac3f-5bf011ff746e",
+                        "Text": "Какой год считается началом русской государственности?",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "2f065e7f-4b74-40a0-a75f-170bfa1faba4",
+                        "Text": "Какой князь захватил Киев в 882 году?",
+                        "CourseType": 7
+                      }
+                    ]
+                  }
+                },
+                {
+                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.TestOfCourse, AutoSystem(CourseWork)",
+                  "Id": "f54237e1-710a-4ae5-99ea-624e7c5e153f",
+                  "Name": "Cредние века Российской истории (14-16 в.)",
+                  "CourseType": 7,
+                  "answers": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Answers.IAnswer, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "9259ed68-9cf0-4caa-813d-8e945b355de6",
+                        "Text": "1380",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "29d5ece7-b5a4-4d10-af6d-53cba05aac6b",
+                        "Text": "успенский собор",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "f3b04a10-2a8d-4920-9c64-f10a0971c8b5",
+                        "Text": "1552",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "b4c0e4e3-118b-4684-b065-15c9f397d01f",
+                        "Text": "16",
+                        "CourseType": 7
+                      }
+                    ]
+                  },
+                  "questions": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Questions.IQuestion, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "9259ed68-9cf0-4caa-813d-8e945b355de6",
+                        "Text": "Назовите год, когда произошла Куликовская битва!",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "29d5ece7-b5a4-4d10-af6d-53cba05aac6b",
+                        "Text": "Какой собор засиял над Москвой золотом пяти богатырских шлемов-глав? (Ответ дайте в виде: ... собор)",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "f3b04a10-2a8d-4920-9c64-f10a0971c8b5",
+                        "Text": "В каком году русское войско под предводительством царя Ивана IVГрозного штурмом овладело Казанью?",
+                        "CourseType": 7
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "b4c0e4e3-118b-4684-b065-15c9f397d01f",
+                        "Text": "В каком веке появились первые мануфактуры в России?",
+                        "CourseType": 7
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
+            "Id": "25887355-a734-4137-a45a-cd22dd7d9957",
+            "Name": "Фундаментальная физика",
+            "AuthorName": "Teacher",
+            "CourseType": 2,
+            "Tests": {
+              "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.ITest, AutoSystem(CourseWork)]], System.Private.CoreLib",
+              "$values": [
+                {
+                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.TestOfCourse, AutoSystem(CourseWork)",
+                  "Id": "2b21ce9c-d0d6-46e1-aa35-2195d343341e",
+                  "Name": "Механика и термодинамика",
+                  "CourseType": 2,
+                  "answers": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Answers.IAnswer, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "832c9d90-5bf9-4fdf-8efc-9ce7b1a22657",
+                        "Text": "20",
+                        "CourseType": 2
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "ce35a2c3-e234-4af2-a0c7-17662fdd7cd7",
+                        "Text": "6",
+                        "CourseType": 2
+                      }
+                    ]
+                  },
+                  "questions": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Questions.IQuestion, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "832c9d90-5bf9-4fdf-8efc-9ce7b1a22657",
+                        "Text": "Какова скорость автомобиля, если за 30 минут он проехал 36 км?\nОтвет дать в м/с",
+                        "CourseType": 2
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "ce35a2c3-e234-4af2-a0c7-17662fdd7cd7",
+                        "Text": "На сколько градусов нагреется вода объемом V  =  2 л, если ей сообщить количество теплоты Q  =  50,4 кДж?",
+                        "CourseType": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {

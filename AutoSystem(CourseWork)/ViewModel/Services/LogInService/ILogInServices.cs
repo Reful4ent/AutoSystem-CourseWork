@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.LogInService
 {
-    internal interface ILogIn
+    public interface ILogInServices
     {
         public bool TryLogIn(string login, string password, IDataManager dataManager);
     }

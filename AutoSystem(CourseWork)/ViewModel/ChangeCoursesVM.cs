@@ -34,6 +34,7 @@ namespace AutoSystem_CourseWork_.ViewModel
         private string name_Of_Test = string.Empty;
         private string question_Text = string.Empty;
         private string answer_Text = string.Empty;
+        private string theory = string.Empty;
 
 
         public event Action? DeleteCourseSucces;
@@ -141,6 +142,11 @@ namespace AutoSystem_CourseWork_.ViewModel
         }
         public Array CourseTypeArray => Enum.GetValues(typeof(CourseTypeEnum));
 
+        public string Theory
+        {
+            get => theory;
+            set => Set(ref theory, value);
+        }
         public void RefreshCourses()
         {
             CoursesList = new ObservableCollection<ICourse>(this.dataManager.CoursesRepository.GetCourses());
@@ -198,7 +204,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void AddTest()
         {
-            if(serviceManager.TryAddTest(IndexCourse, Name_Of_Test, (CourseTypeEnum)(TestType)))
+            if(serviceManager.TryAddTest(IndexCourse, Name_Of_Test, Theory, (CourseTypeEnum)(TestType)))
             {
                 AddTestSucces?.Invoke();
             }

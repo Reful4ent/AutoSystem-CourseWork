@@ -12,6 +12,7 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test
     public interface ITest : IEntity
     {
         public string Name { get; }
+        public string Theory { get; set; }
         public CourseTypeEnum CourseType { get; }
         public List<IAnswer> answers { get; set; }
         public List<IQuestion> questions { get; set; }

@@ -1,6 +1,7 @@
 ﻿using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.ChangeUserRepService
 {
-    internal class ChangeUserRepServices : IChangeUserRep
+    public class ChangeUserRepServices : IChangeUserRepServices
     {
+        public static ChangeUserRepServices Instance() => new();
         public bool TryDeleteUser(int number, IDataManager dataManager)
         {
             if (number == dataManager.UserRepository.GetUsers().IndexOf(dataManager.ParticularUser)) return false;

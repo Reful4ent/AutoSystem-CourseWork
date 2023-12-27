@@ -34,7 +34,12 @@ namespace AutoSystem_CourseWork_.Model
             this.Role = ReturnRole.chooseRole(this.Role_Id);
             this.Courses = Courses;
         }
-
+        public bool AnswerQuestion(IAnswer answer, IQuestion question, string myAnswer)
+        {
+            if (!(answer.Id == question.Id)) return false;
+            if (answer.Text != myAnswer) return false;
+            return true;
+        }
         public bool AddMeCourse(ICourse course)
         {
             if (course == null) return false;

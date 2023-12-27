@@ -20,23 +20,23 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
 {
     class ServiceManager : IServiceManager
     {
-        IDataManager dataManager;
-        private LogInServices logInServices;
-        private ChangeUserRepServices changeUserRepService;
-        private ChangeUserCourseServices changeUserCourseServices;
-        private RegistrationServices registrationServices;
-        private TestsQustionServices testsQustionServices;
+        private IDataManager dataManager;
+        private ILogInServices logInServices;
+        private IChangeUserRepServices changeUserRepServices;
+        private IChangeUserCourseServices changeUserCourseServices;
+        private IRegistrationServices registrationServices;
+        private ITestQuestionServices testQuestionServices;
 
-        public ServiceManager(IDataManager dataManager)
+        public ServiceManager(IDataManager dataManager, ILogInServices logInServices, IChangeUserRepServices changeUserRepServices, IChangeUserCourseServices changeUserCourseServices, IRegistrationServices registrationServices, ITestQuestionServices testQuestionServices)
         {
-            logInServices = new LogInServices();
-            changeUserRepService = new ChangeUserRepServices();
-            changeUserCourseServices = new ChangeUserCourseServices();
-            registrationServices = new RegistrationServices();
-            testsQustionServices = new TestsQustionServices();
+            this.logInServices = logInServices;
+            this.changeUserRepServices = changeUserRepServices;
+            this.changeUserCourseServices = changeUserCourseServices;
+            this.registrationServices = registrationServices;
+            this.testQuestionServices = testQuestionServices;
             this.dataManager = dataManager;
         }
-        public static ServiceManager Instance(IDataManager dataManager) => new ServiceManager(dataManager);
+        public static ServiceManager Instance(IDataManager dataManager,ILogInServices logInServices, IChangeUserRepServices changeUserRepServices, IChangeUserCourseServices changeUserCourseServices, IRegistrationServices registrationServices, ITestQuestionServices testQuestionServices) => new ServiceManager(dataManager, logInServices, changeUserRepServices, changeUserCourseServices, registrationServices, testQuestionServices);
 
         public bool TryLogIn(string login, string password)
         {
@@ -55,12 +55,12 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
 
         public bool TryDeleteUser(int number)
         {
-            return changeUserRepService.TryDeleteUser(number, dataManager);
+            return changeUserRepServices.TryDeleteUser(number, dataManager);
         }
 
         public bool TryChangeUserRole(int number, int Role_Id)
         {
-            return changeUserRepService.TryChangeUserRole(number, Role_Id, dataManager);
+            return changeUserRepServices.TryChangeUserRole(number, Role_Id, dataManager);
         }
         public bool TryRegistration(string name, string login, string password, string passwordRepeat)
         {
@@ -69,40 +69,40 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
 
         public List<ITest> GetTests(int number)
         {
-            return testsQustionServices.GetTests(number, dataManager);
+            return testQuestionServices.GetTests(number, dataManager);
         }
 
         public List<IQuestion> GetQuestions(int numberCourse, int numberTest)
         {
-            return testsQustionServices.GetQuestions(numberCourse, numberTest, dataManager);
+            return testQuestionServices.GetQuestions(numberCourse, numberTest, dataManager);
         }
         public bool TryDeleteCourse(int number)
         {
-            return testsQustionServices.DeleteCourse(number, dataManager);
+            return testQuestionServices.DeleteCourse(number, dataManager);
         }
 
         public bool TryDeleteTest(ICourse course, int number)
         {
-            return testsQustionServices.DeleteTest(course, number, dataManager);
+            return testQuestionServices.DeleteTest(course, number, dataManager);
         }
 
         public bool TryDeleteQuestion(ICourse course, ITest test, int number)
         {
-            return testsQustionServices.DeleteQuestion(course, test, number, dataManager);
+            return testQuestionServices.DeleteQuestion(course, test, number, dataManager);
         }
 
         public bool TryAddCourse(string name, CourseTypeEnum courseTypeEnum)
         {
-            return testsQustionServices.AddCourse(name, courseTypeEnum, dataManager);
+            return testQuestionServices.AddCourse(name, courseTypeEnum, dataManager);
         }
-        public bool TryAddTest(int number, string name, CourseTypeEnum courseTypeEnum)
+        public bool TryAddTest(int number, string name,string theory, CourseTypeEnum courseTypeEnum)
         {
-            return testsQustionServices.AddTest(number, name, courseTypeEnum, dataManager);
+            return testQuestionServices.AddTest(number, name, theory, courseTypeEnum, dataManager);
         }
 
         public bool TryAddAnswerQuestion(int numberCourse, int numberTest, string questionText, string answerText, CourseTypeEnum courseTypeEnum)
         {
-            return testsQustionServices.AddQuestionAnswer(numberCourse, numberTest, questionText, answerText, courseTypeEnum, dataManager);
+            return testQuestionServices.AddQuestionAnswer(numberCourse, numberTest, questionText, answerText, courseTypeEnum, dataManager);
         }
     }
 }

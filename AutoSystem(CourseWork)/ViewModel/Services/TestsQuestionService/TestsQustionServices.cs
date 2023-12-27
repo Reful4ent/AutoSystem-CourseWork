@@ -11,11 +11,13 @@ using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.Model.Сourse.Test.Answers;
 using static System.Net.Mime.MediaTypeNames;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel.Services.RegistrationService;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 {
-    internal class TestsQustionServices : ITestQuestionService
+    public class TestsQustionServices : ITestQuestionServices
     {
+        public static TestsQustionServices Instance() => new();
         public List<ITest> GetTests(int number,IDataManager dataManager)
         {
             List<ICourse> courses = dataManager.CoursesRepository.GetCourses();
@@ -73,14 +75,14 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             dataManager.CoursesRepository.Save();
             return true;
         }
-        public bool AddTest(int number, string name,CourseTypeEnum courseTypeEnum, IDataManager dataManager)
+        public bool AddTest(int number, string name,string theory,CourseTypeEnum courseTypeEnum, IDataManager dataManager)
         {
             if (String.IsNullOrEmpty(name)) return false;
             List<ICourse> courses = dataManager.CoursesRepository.GetCourses();
             List<IQuestion> questions = new List<IQuestion>();
             List<IAnswer> answers = new List<IAnswer>();
             if (courses.Count == 0 || number >= courses.Count || number < 0) return false;
-            TestOfCourse test = new(Guid.NewGuid(), name, courseTypeEnum, answers, questions);
+            TestOfCourse test = new(Guid.NewGuid(), name, theory, courseTypeEnum, answers, questions);
             if (!dataManager.ParticularUser.AddTest(courses[number], test)) return false;
             if (!dataManager.CoursesRepository.Update(courses[number])) return false;
             dataManager.CoursesRepository.Save();

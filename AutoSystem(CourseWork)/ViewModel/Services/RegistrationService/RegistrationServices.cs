@@ -3,6 +3,7 @@ using AutoSystem_CourseWork_.Data.UserSerialization;
 using AutoSystem_CourseWork_.Model;
 using AutoSystem_CourseWork_.Model.Сourse;
 using AutoSystem_CourseWork_.ViewModel.DataManager;
+using AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,9 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.RegistrationService
 {
-    internal class RegistrationServices : IRegistration
+    public class RegistrationServices : IRegistrationServices
     {
+        public static RegistrationServices Instance() => new();
         public bool TryRegistration(string name,string login,string password, string passwordRepeat, IDataManager dataManager)
         {
             if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(login) || String.IsNullOrEmpty(password) || String.IsNullOrEmpty(passwordRepeat)) return false;

@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.AddCourseUserService
 {
-    internal class ChangeUserCourseServices : IChangeUserCourse
+    public class ChangeUserCourseServices : IChangeUserCourseServices
     {
+        public static ChangeUserCourseServices Instance() => new();
         public bool TryAddUserCourse(ICourse course, IDataManager dataManager)
         {
             if (!(dataManager.ParticularUser.AddMeCourse(course))) return false; 

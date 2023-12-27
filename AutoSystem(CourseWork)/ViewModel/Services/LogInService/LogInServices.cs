@@ -11,7 +11,7 @@ using AutoSystem_CourseWork_.Model;
 
 namespace AutoSystem_CourseWork_.ViewModel.Services.LogInService
 {
-    internal class LogInServices : ILogIn
+    public class LogInServices : ILogInServices
     {
         public static LogInServices Instance() => new LogInServices();
         public bool TryLogIn(string login, string password, IDataManager dataManager)
