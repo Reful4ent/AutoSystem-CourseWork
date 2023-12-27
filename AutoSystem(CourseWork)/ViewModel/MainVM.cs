@@ -26,6 +26,7 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         public event Action? DeleteSucces;
         public event Action<string>? DeleteFailed;
+        public event Action? SetCourseSucces;
 
         public MainVM(IDataManager dataManager,IServiceManager serviceManager)
         {
@@ -83,7 +84,25 @@ namespace AutoSystem_CourseWork_.ViewModel
                 DeleteFailed?.Invoke("Не удалось удалить курс!");
             }
         }
+        
+        private void SetCourse()
+        {
+            if (serviceManager.TrySetCourse(Index))
+            {
+                SetCourseSucces?.Invoke();
+            }
+        }
 
+        public ICommand SetCourseCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    SetCourse();
+                });
+            }
+        }
         public ICommand DeleteCourseCommand
         {
             get

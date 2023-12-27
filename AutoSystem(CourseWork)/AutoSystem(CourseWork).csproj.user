@@ -28,6 +28,9 @@
     <Compile Update="View\RegistrationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\TestsListWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -54,6 +57,9 @@
     <Page Update="View\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\TestsListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ViewStyles\ChangeCoursesStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -73,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\RegistrationStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\TestsListWindowStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

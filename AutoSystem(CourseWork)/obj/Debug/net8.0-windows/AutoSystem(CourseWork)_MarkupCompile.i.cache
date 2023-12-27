@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\App.xaml
-15134288060
+17532418442
 
-762039425158
+78594086187
 1991964988371
-MainWindow.xaml;View\ChangeCourseWindow.xaml;View\ChangeUserRepositoryWindow.xaml;View\CoursesAddList.xaml;View\ErrorWindow.xaml;View\LogInWindow.xaml;View\MainWindow.xaml;View\RegistrationWindow.xaml;View\ViewStyles\ChangeCoursesStyle.xaml;View\ViewStyles\ChangeUserRepositoryStyles.xaml;View\ViewStyles\CoursesAddListStyles.xaml;View\ViewStyles\ErrorStyles.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\MainStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;
+MainWindow.xaml;View\ChangeCourseWindow.xaml;View\ChangeUserRepositoryWindow.xaml;View\CoursesAddList.xaml;View\ErrorWindow.xaml;View\LogInWindow.xaml;View\MainWindow.xaml;View\RegistrationWindow.xaml;View\TestsListWindow.xaml;View\ViewStyles\ChangeCoursesStyle.xaml;View\ViewStyles\ChangeUserRepositoryStyles.xaml;View\ViewStyles\CoursesAddListStyles.xaml;View\ViewStyles\ErrorStyles.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\MainStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;View\ViewStyles\TestsListWindowStyle.xaml;
 
-False
+True
 

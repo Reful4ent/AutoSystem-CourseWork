@@ -15,6 +15,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
     public interface IDataManager
     {
         public User ParticularUser { get; set; }
+        public ICourse ParticularCurse {  get; set; }
         public UserRepository UserRepository { get; }
         public CoursesRepository CoursesRepository { get; }
 

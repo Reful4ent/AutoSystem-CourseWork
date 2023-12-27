@@ -59,6 +59,7 @@
         <Grid x:Name="Footer" Grid.Row="3">
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="Add_Course" Content="Добавить курс" Click="Add_Course_Click" Style="{StaticResource ResourceKey=Add_Course}"></Button>
+                <Button x:Name="Choose_Course" Content="Выбрать курс" Command="{Binding SetCourseCommand}" Style="{StaticResource ResourceKey=Choose_Course}"></Button>
                 <Button x:Name="Delete_Course" Content="Удалить курс" Command="{Binding DeleteCourseCommand}" Style="{StaticResource ResourceKey=Delete_Course}"></Button>
             </StackPanel>
         </Grid>

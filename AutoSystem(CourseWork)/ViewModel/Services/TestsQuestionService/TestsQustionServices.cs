@@ -104,5 +104,13 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
             dataManager.CoursesRepository.Save();
             return true;
         }
+
+        public bool SetCourse(int index, IDataManager dataManager)
+        {
+            List<ICourse> courses = dataManager.ParticularUser.Courses;
+            dataManager.ParticularCurse = courses[index];
+            if (dataManager.ParticularCurse == null) return false;
+            return true;
+        }
     }
 }

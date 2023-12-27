@@ -104,5 +104,9 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
         {
             return testQuestionServices.AddQuestionAnswer(numberCourse, numberTest, questionText, answerText, courseTypeEnum, dataManager);
         }
+        public bool TrySetCourse(int index)
+        {
+            return testQuestionServices.SetCourse(index, dataManager);
+        }
     }
 }

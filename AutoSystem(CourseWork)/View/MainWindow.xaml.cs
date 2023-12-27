@@ -34,6 +34,7 @@ namespace AutoSystem_CourseWork_.View
                 ButtonHide(mainVM.Role_Id);
                 mainVM.DeleteSucces += RefreshWindow;
                 mainVM.DeleteFailed += OpenErrorWindow;
+                mainVM.SetCourseSucces += OpenTestsListWindow;
             }
         }
 
@@ -71,7 +72,14 @@ namespace AutoSystem_CourseWork_.View
             }
         }
 
-        public void RefreshWindow()
+        private void OpenTestsListWindow()
+        {
+            TestsListWindow testsListWindow = new TestsListWindow(dataManager, serviceManager);
+            testsListWindow.Show();
+            this.Close();
+        }
+
+        private void RefreshWindow()
         {
             if (DataContext is MainVM mainVM)
             {

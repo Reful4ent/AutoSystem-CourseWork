@@ -23,6 +23,7 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
         private UserRepository userRepository;
         private CoursesRepository coursesRepository;
         private User particulalUser = null;
+        private ICourse particularCourse = null;
 
         public User ParticularUser
         {
@@ -33,6 +34,17 @@ namespace AutoSystem_CourseWork_.ViewModel.DataManager
                     particulalUser = value;
             }
         }
+
+        public ICourse ParticularCurse
+        {
+            get => particularCourse;
+            set
+            {
+                if (value != null)
+                    particularCourse = value;
+            }
+        }
+
         public UserRepository UserRepository => userRepository;
         public CoursesRepository CoursesRepository => coursesRepository;
 

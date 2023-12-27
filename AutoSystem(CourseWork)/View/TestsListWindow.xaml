@@ -1,0 +1,52 @@
+﻿<Window x:Class="AutoSystem_CourseWork_.View.TestsListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSystem_CourseWork_.View"
+        mc:Ignorable="d"
+            WindowStartupLocation="CenterScreen"
+    Title="CoursesAddList" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="/AutoSystem(CourseWork);component/View/ViewStyles/TestsListWindowStyle.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid Style="{StaticResource ResourceKey=Background_Window}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="Navbar" MouseLeftButtonDown="Navbar_MouseLeftButtonDown" Grid.Row="0" Style="{StaticResource ResourceKey=Navbar}">
+            <Border x:Name="Navbar_Border" Style="{StaticResource ResourceKey=Navbar_Border}">
+                <StackPanel Orientation="Horizontal" x:Name="Navbar_Panel">
+                    <Image x:Name="Minimize" MouseDown="Minimize_MouseDown" Source="/AutoSystem(CourseWork);component/View/Images/MinWindow.png" Style="{StaticResource ResourceKey=Minimize_Button}"></Image>
+                    <Path x:Name="Exit" MouseDown="Exit_MouseDown" Style="{StaticResource ResourceKey=Exit_Button}"  Data="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></Path>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid x:Name="Courses_List" Grid.Row="1">
+            <ScrollViewer>
+                <ListBox x:Name="List_Of_Courses" ItemsSource="{Binding TestsList}" SelectedIndex="{Binding Index}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Style="{StaticResource ResourceKey=Tests_List_Style}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Name}" Grid.Row="0" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Name"></TextBlock>
+                                <TextBlock Text="{Binding CourseType}" Grid.Row="2" Style="{StaticResource ResourceKey=List_Text}" x:Name="Course_Percent"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid x:Name="Courses_Add" Grid.Row="2">
+            <Button x:Name="Test_Choose_Button" Content="Решить" Style="{StaticResource ResourceKey=CourseAdd_Button}" Command=""></Button>
+        </Grid>
+    </Grid>
+</Window>
