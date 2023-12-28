@@ -28,7 +28,7 @@ namespace AutoSystem_CourseWork_.View
             InitializeComponent();
             this.dataManager = dataManager;
             this.serviceManager = serviceManager;
-            Results_Textblock.Text = "Вы ответили верно на: " + results + " из " + count + "Вопросов"; 
+            Results_Textblock.Text = "Вы ответили верно на: " + results + " из " + count + " вопросов"; 
         }
 
         private void End_Test_Button_Click(object sender, RoutedEventArgs e)

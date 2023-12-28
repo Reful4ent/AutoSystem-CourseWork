@@ -53,3 +53,6 @@ C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\De
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\AnswerQuestionWindow.g.cs
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\AnswerQuestionWindow.baml
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\AnswerQuestionWindowStyles.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ViewStyles\ResultsWindowStyles.baml
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ResultsWindow.g.cs
+C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\obj\Debug\net8.0-windows\View\ResultsWindow.baml

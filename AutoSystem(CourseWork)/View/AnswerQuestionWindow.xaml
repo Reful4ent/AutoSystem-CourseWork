@@ -51,10 +51,10 @@
         </Grid>
 
         <Grid Grid.Row="3">
-            <TextBox Text="" Style="{StaticResource ResourceKey=Answer_Style}"></TextBox>
+            <TextBox Text="{Binding AnswerText}" Style="{StaticResource ResourceKey=Answer_Style}"></TextBox>
         </Grid>
         <Grid x:Name="Answer_Question_Button" Grid.Row="4">
-            <Button Content="Ответил" Command="" Style="{StaticResource ResourceKey=Button_style}"></Button>
+            <Button Content="Ответил" Command="{Binding AnswerCommand}" Style="{StaticResource ResourceKey=Button_style}"></Button>
         </Grid>
     </Grid>
 </Window>

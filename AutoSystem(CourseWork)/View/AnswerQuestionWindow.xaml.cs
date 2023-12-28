@@ -35,7 +35,9 @@ namespace AutoSystem_CourseWork_.View
         }
         private void OpenResultationWindow(int results, int count)
         {
-
+            ResultsWindow resultsWindow = new ResultsWindow(results,count,dataManager,serviceManager);
+            resultsWindow.Show();
+            this.Close();
         }
         private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.DragMove();
 

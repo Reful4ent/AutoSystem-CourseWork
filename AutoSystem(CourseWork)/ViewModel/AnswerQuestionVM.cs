@@ -1,10 +1,13 @@
 ﻿using AutoSystem_CourseWork_.ViewModel.DataManager;
 using AutoSystem_CourseWork_.ViewModel.Services;
+using AutoSystem_CourseWork_.Model.CounterPoints;
+using AutoSystem_CourseWork_.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace AutoSystem_CourseWork_.ViewModel
 {
@@ -12,6 +15,7 @@ namespace AutoSystem_CourseWork_.ViewModel
     {
         IDataManager dataManager;
         IServiceManager serviceManager;
+        IPointCounter pointCounter;
         private string questionText = string.Empty;
         private string answerText = string.Empty;
         private int questionIndex;
@@ -25,9 +29,10 @@ namespace AutoSystem_CourseWork_.ViewModel
             this.dataManager = dataManager;
             this.serviceManager = serviceManager;
             QuestionCount = dataManager.ParticularTest.questions.Count;
-            QuestionText = dataManager.ParticularTest.questions[0].Text;
             QuestionIndex = 0;
-            QuestionNumber = QuestionIndex + 1; 
+            QuestionText = dataManager.ParticularTest.questions[QuestionIndex].Text;
+            QuestionNumber = QuestionIndex + 1;
+            pointCounter = PointCounter.Instance(this.dataManager.ParticularUser);
         }
 
         public string QuestionText
@@ -56,9 +61,37 @@ namespace AutoSystem_CourseWork_.ViewModel
             set => Set(ref questionCount, value);
         }
 
-        public void StartAnswering()
+        private void StartAnswering()
         {
+            if(QuestionIndex == QuestionCount)
+            {
+                AnswerQuestionCompleted?.Invoke(pointCounter.Points, questionCount);
+            }
+            else
+            {
+                pointCounter.AnswerQuestionPoint(dataManager.ParticularTest.answers[QuestionIndex], dataManager.ParticularTest.questions[questionIndex], AnswerText);
+                Refresh();
+            }
+        }
 
+        private void Refresh()
+        {
+            QuestionIndex += 1;
+            if (QuestionIndex == QuestionCount) return;
+            QuestionText = dataManager.ParticularTest.questions[QuestionIndex].Text;
+            QuestionNumber = QuestionIndex + 1;
+            AnswerText = string.Empty;
+        }
+
+        public ICommand AnswerCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    StartAnswering();
+                });
+            }
         }
     }
 }

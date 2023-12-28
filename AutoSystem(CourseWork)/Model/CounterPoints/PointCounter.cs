@@ -26,9 +26,9 @@ namespace AutoSystem_CourseWork_.Model.CounterPoints
         public bool AnswerQuestionPoint(IAnswer answer, IQuestion question, string myAnswer)
         {
             if (user.AnswerQuestion(answer, question, myAnswer))
-                points += 1;
+                Points += 1;
             else
-                points += 0;
+                Points += 0;
             return true;
         }
     }

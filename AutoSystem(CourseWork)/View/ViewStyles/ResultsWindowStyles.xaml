@@ -3,6 +3,9 @@
     
     <Style x:Key="Results_Style" TargetType="TextBlock">
         <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
         <Setter Property="FontStyle" Value="Normal"></Setter>
         <Setter Property="FontWeight"  Value="Bold"></Setter>
         <Setter Property="Padding" Value="10"></Setter>

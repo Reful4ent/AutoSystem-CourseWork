@@ -10,6 +10,7 @@ namespace AutoSystem_CourseWork_.Model.CounterPoints
 {
     public interface IPointCounter
     {
+        public int Points { get; set; }
         public bool AnswerQuestionPoint(IAnswer answer, IQuestion question, string myAnswer);
     }
 }
