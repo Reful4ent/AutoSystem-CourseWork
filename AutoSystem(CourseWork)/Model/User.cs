@@ -11,6 +11,7 @@ using AutoSystem_CourseWork_.Model.Possibilities.Interfaces;
 using AutoSystem_CourseWork_.Model.Сourse.Test.Answers;
 using AutoSystem_CourseWork_.Model.Сourse.Test.Questions;
 using AutoSystem_CourseWork_.Model.Сourse.Test;
+using System.Xml.Linq;
 
 namespace AutoSystem_CourseWork_.Model
 {
@@ -26,12 +27,30 @@ namespace AutoSystem_CourseWork_.Model
 
         public User(Guid Id, string Name, string Login, string Password, int Role_Id, List<ICourse> Courses)
         {
+            if(Id == null)
+                throw new ArgumentException("Пустой айди");
             this.Id = Id;
+            if (String.IsNullOrEmpty(Name))
+                throw new ArgumentException("Пустое поле имени");
+            if (Name.StartsWith(" "))
+                throw new ArgumentException("Имя не может начинаться с пробела");
             this.Name = Name;
+            if (String.IsNullOrEmpty(Login))
+                throw new ArgumentException("Пустое поле логина");
+            if (Login.StartsWith(" ") || Login.Contains(" "))
+                throw new ArgumentException("Логин не может содержать в себе пробелы!");
             this.Login = Login;
+            if (String.IsNullOrEmpty(Password))
+                throw new ArgumentException("Пароль не может быть пустым");
+            if(Password.StartsWith(" ") || Password.Contains(" "))
+                throw new ArgumentException("Пароль не может содержать в себе пробелы!");
             this.Password = Password;
+            if (Role_Id < 0 || Role_Id > 2)
+                throw new ArgumentException("Роль не может лежать вне диапозона [0,2]");
             this.Role_Id = Role_Id;
             this.Role = ReturnRole.chooseRole(this.Role_Id);
+            if (Courses == null)
+                throw new ArgumentException("Курс имеет нулевую ссылку");
             this.Courses = Courses;
         }
         public bool AnswerQuestion(IAnswer answer, IQuestion question, string myAnswer)

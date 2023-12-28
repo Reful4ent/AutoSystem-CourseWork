@@ -13,7 +13,11 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test.Answers
         public CourseTypeEnum CourseType { get; }
         public TextAnswer(Guid id, string text, CourseTypeEnum courseType)
         {
+            if (Id == null)
+                throw new ArgumentNullException("Айди не может быть пустым");
             Id = id;
+            if (String.IsNullOrEmpty(text) || String.IsNullOrWhiteSpace(text))
+                throw new ArgumentException("Пустое поле ответа");
             Text = text;
             CourseType = courseType;
         }

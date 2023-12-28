@@ -20,11 +20,23 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test
 
         public TestOfCourse(Guid Id, string Name, string Theory, CourseTypeEnum CourseType, List<IAnswer> answers, List<IQuestion> questions)
         {
+            if (Id == null)
+                throw new ArgumentNullException("Айди не может быть пустым");
             this.Id = Id;
+            if (String.IsNullOrEmpty(Name))
+                throw new ArgumentException("Пустое поле имени");
+            if (Name.StartsWith(" "))
+                throw new ArgumentException("Имя не может начинаться с пробела");
             this.Name = Name;
+            if (String.IsNullOrEmpty(Theory) || String.IsNullOrWhiteSpace(Theory))
+                throw new ArgumentException("Пустое поле теории");
             this.Theory = Theory;
             this.CourseType = CourseType;
+            if (answers == null)
+                throw new ArgumentException("Ответы имеют нулевую ссылку");
             this.answers = answers;
+            if (questions == null)
+                throw new ArgumentException("Вопросы имеют нулевую ссылку");
             this.questions = questions;
         }
 

@@ -392,6 +392,96 @@
         "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
         "$values": []
       }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "801fc29f-d49f-4b80-a1b5-73b43beb0e0a",
+      "Name": "Ортур",
+      "Login": "rochaldo_1",
+      "Password": "2Ax1FGEvOAm1pM7238JaIA==",
+      "Role_Id": 0,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": [
+          {
+            "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
+            "Id": "25887355-a734-4137-a45a-cd22dd7d9957",
+            "Name": "Фундаментальная физика",
+            "AuthorName": "Teacher",
+            "CourseType": 2,
+            "Tests": {
+              "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.ITest, AutoSystem(CourseWork)]], System.Private.CoreLib",
+              "$values": [
+                {
+                  "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.TestOfCourse, AutoSystem(CourseWork)",
+                  "Id": "2b21ce9c-d0d6-46e1-aa35-2195d343341e",
+                  "Name": "Механика и термодинамика",
+                  "Theory": "Равномерное движение.  скорость такого движения на любом измеряемом отрезке одинакова, ускорение или замедление отсутствует. Напомним, что скорость (она обозначается буквой V) характеризует «быстроту» совершения движения. Она равна отношению пути S, пройденного материальной точкой, ко времени прохождения t.Для её определения используется формула: V=S/t\r\n\r\nМолекулярная физика.Если тело однородно, а теплоемкость считают независимой от температуры, то количество теплоты (dQ), которое получает тело при увеличении его температуры на величину (dT=T1-T2)можно вычислить как:\r\ndQ = c*m*dT\r\nгде T2, T1 температуры тела до нагрева и после. Обратите внимание, что температуры при нахождении разности (dT) в расчетах можно подставлять как в градусах Цельсия, так и в кельвинах.\r\n",
+                  "CourseType": 2,
+                  "answers": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Answers.IAnswer, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "832c9d90-5bf9-4fdf-8efc-9ce7b1a22657",
+                        "Text": "20",
+                        "CourseType": 2
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
+                        "Id": "ce35a2c3-e234-4af2-a0c7-17662fdd7cd7",
+                        "Text": "6",
+                        "CourseType": 2
+                      }
+                    ]
+                  },
+                  "questions": {
+                    "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.Questions.IQuestion, AutoSystem(CourseWork)]], System.Private.CoreLib",
+                    "$values": [
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "832c9d90-5bf9-4fdf-8efc-9ce7b1a22657",
+                        "Text": "Какова скорость автомобиля, если за 30 минут он проехал 36 км?\nОтвет дать в м/с",
+                        "CourseType": 2
+                      },
+                      {
+                        "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
+                        "Id": "ce35a2c3-e234-4af2-a0c7-17662fdd7cd7",
+                        "Text": "На сколько градусов нагреется вода объемом V  =  2 л, если ей сообщить количество теплоты Q  =  50,4 кДж?",
+                        "CourseType": 2
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "3198750c-2cf4-4ed1-a35a-77ce7e5fbb83",
+      "Name": "ASDASDASASD",
+      "Login": "wqeqwwe",
+      "Password": "ttdn0vjtXSGkSw5YhmgMuQ==",
+      "Role_Id": 0,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.User, AutoSystem(CourseWork)",
+      "Id": "fbae8e4e-7bc9-4f87-bc67-9ec086b7053a",
+      "Name": "авппав",
+      "Login": "уууу",
+      "Password": "ttdn0vjtXSGkSw5YhmgMuQ==",
+      "Role_Id": 0,
+      "Courses": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.ICourse, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
     }
   ]
 }

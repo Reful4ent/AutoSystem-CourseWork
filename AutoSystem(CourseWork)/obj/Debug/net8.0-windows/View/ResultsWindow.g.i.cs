@@ -85,7 +85,7 @@ namespace AutoSystem_CourseWork_.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AutoSystem(CourseWork);component/view/resultswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AutoSystem(CourseWork);V1.0.0.0;component/view/resultswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\ResultsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

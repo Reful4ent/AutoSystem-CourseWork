@@ -18,10 +18,22 @@ namespace AutoSystem_CourseWork_.Model.Сourse
 
         public Course(Guid Id, string Name, string AuthorName, CourseTypeEnum CourseType, List<ITest> Tests)
         {
+            if(Id == null)
+                throw new ArgumentNullException("Айди не может быть пустым");
             this.Id = Id;
+            if (String.IsNullOrEmpty(Name))
+                throw new ArgumentException("Пустое поле имени");
+            if (Name.StartsWith(" "))
+                throw new ArgumentException("Имя не может начинаться с пробела");
             this.Name = Name;
+            if (String.IsNullOrEmpty(AuthorName))
+                throw new ArgumentException("Пустое поле имени");
+            if (AuthorName.StartsWith(" "))
+                throw new ArgumentException("Имя не может начинаться с пробела");
             this.AuthorName = AuthorName;
             this.CourseType = CourseType;
+            if (Tests == null)
+                throw new ArgumentException("Тесты имеют нулевую ссылку");
             this.Tests = Tests;
         }
 

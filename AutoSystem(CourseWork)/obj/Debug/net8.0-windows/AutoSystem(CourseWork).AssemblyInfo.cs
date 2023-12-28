@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoSystem(CourseWork)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dda8a3f3b5f2125dd0252f2c8b28824b46e4a14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoSystem(CourseWork)")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoSystem(CourseWork)")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
