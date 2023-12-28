@@ -12,6 +12,7 @@ namespace AutoSystem_CourseWork_.Model.Сourse
     {
         public Guid Id { get; }
         public string Name { get; }
+        public string AuthorName { get; }
         public CourseTypeEnum CourseType { get; }
         public List<ITest> Tests { get; }
         public bool AddTest(ITest test);

@@ -30,7 +30,7 @@ namespace AutoSystem_CourseWork_.Model.Сourse
             if (test == null || Tests.Contains(test)) return false;
             if (test.CourseType != CourseType) return false;
             var CheckSimilary = from selectTest in Tests
-                                where (test.Id == selectTest.Id)
+                                where (test.Id == selectTest.Id || test.Name == selectTest.Name)
                                 select test;
             if (CheckSimilary.Count() != 0) return false;
             Tests.Add(test);

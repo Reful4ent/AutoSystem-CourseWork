@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\AnswerQuestionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ChangeCourseWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +42,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AnswerQuestionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ChangeCourseWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -66,6 +72,9 @@
     <Page Update="View\TestsListWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ViewStyles\AnswerQuestionWindowStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ViewStyles\ChangeCoursesStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -85,6 +94,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\RegistrationStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\SolveTestWindowStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\TestsListWindowStyle.xaml">

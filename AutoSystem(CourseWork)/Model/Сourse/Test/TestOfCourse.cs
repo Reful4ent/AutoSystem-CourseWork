@@ -30,20 +30,19 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test
 
         public bool AddQuestionAndAnswer(IQuestion question, IAnswer answer)
         {
-            if (answer.Id != question.Id) return false;
-
             if (question == null || questions.Contains(question)) return false;
             var CheckSimilaryQues = from selectQuestion in questions
-                                where (question.Id == selectQuestion.Id)
-                                select question;
+                                    where (question.Id == selectQuestion.Id)
+                                    select question;
             if (CheckSimilaryQues.Count() != 0) return false;
 
             if (answer == null || answers.Contains(answer)) return false;
             var CheckSimilaryAns = from selectAnswer in questions
-                                where (answer.Id == selectAnswer.Id)
-                                select answer;
+                                   where (answer.Id == selectAnswer.Id)
+                                   select answer;
             if (CheckSimilaryAns.Count() != 0) return false;
 
+            if (answer.Id != question.Id) return false;
 
             answers.Add(answer);
             questions.Add(question);

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\dima2\source\repos\AutoSystem(CourseWork)\AutoSystem(CourseWork)\App.xaml
-17532418442
+21-1940736239
 
-761731698462
+79-914539843
 1991964988371
-MainWindow.xaml;View\ChangeCourseWindow.xaml;View\ChangeUserRepositoryWindow.xaml;View\CoursesAddList.xaml;View\ErrorWindow.xaml;View\LogInWindow.xaml;View\MainWindow.xaml;View\RegistrationWindow.xaml;View\TestsListWindow.xaml;View\ViewStyles\ChangeCoursesStyle.xaml;View\ViewStyles\ChangeUserRepositoryStyles.xaml;View\ViewStyles\CoursesAddListStyles.xaml;View\ViewStyles\ErrorStyles.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\MainStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;View\ViewStyles\TestsListWindowStyle.xaml;
+MainWindow.xaml;View\AnswerQuestionWindow.xaml;View\ChangeCourseWindow.xaml;View\ChangeUserRepositoryWindow.xaml;View\CoursesAddList.xaml;View\ErrorWindow.xaml;View\LogInWindow.xaml;View\MainWindow.xaml;View\RegistrationWindow.xaml;View\SolveTestWindow.xaml;View\TestsListWindow.xaml;View\ViewStyles\AnswerQuestionWindowStyles.xaml;View\ViewStyles\ChangeCoursesStyle.xaml;View\ViewStyles\ChangeUserRepositoryStyles.xaml;View\ViewStyles\CoursesAddListStyles.xaml;View\ViewStyles\ErrorStyles.xaml;View\ViewStyles\LogInStyles.xaml;View\ViewStyles\MainStyles.xaml;View\ViewStyles\RegistrationStyles.xaml;View\ViewStyles\SolveTestWindowStyles.xaml;View\ViewStyles\TestsListWindowStyle.xaml;
 
 False
 

@@ -31,7 +31,7 @@ namespace AutoSystem_CourseWork_.View
             DataContext = new TestsListVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
             if(DataContext is TestsListVM testsListVM)
             {
-                testsListVM.SetTestSucces += 
+                testsListVM.SetTestSucces += OpenSolveTestWindow; 
             }
         }
 

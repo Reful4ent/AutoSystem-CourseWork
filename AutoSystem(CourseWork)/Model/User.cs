@@ -36,6 +36,7 @@ namespace AutoSystem_CourseWork_.Model
         }
         public bool AnswerQuestion(IAnswer answer, IQuestion question, string myAnswer)
         {
+            if (answer == null || question == null) return false;
             if (!(answer.Id == question.Id)) return false;
             if (answer.Text != myAnswer) return false;
             return true;
@@ -44,7 +45,7 @@ namespace AutoSystem_CourseWork_.Model
         {
             if (course == null) return false;
             var CheckSimilary = from selectCourse in Courses
-                                where (course.Id == selectCourse.Id)
+                                where (course.Id == selectCourse.Id || (course.Name == selectCourse.Name && course.AuthorName == selectCourse.AuthorName))
                                 select course;
             if (CheckSimilary.Count() != 0) return false;
             Courses.Add(course);

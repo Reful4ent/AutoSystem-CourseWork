@@ -17,7 +17,7 @@ namespace AutoSystem_CourseWork_.Data.UserSerialization
         private List<User> _users = new();
         private string path = string.Empty;
 
-        public List<User> GetUsers() => _users;
+        public List<User> GetUsers() =>_users;
         public UserRepository(string path) 
         {
             this.path = path;

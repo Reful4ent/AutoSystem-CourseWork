@@ -14,6 +14,7 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
     {
         public bool AddQuestionAndAnswer(ITest test, IQuestion question, IAnswer answer)
         {
+            if(test == null || question == null ||answer == null) return false;
             if(test.AddQuestionAndAnswer(question, answer))
                 return true;
             return false;
@@ -21,6 +22,7 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 
         public bool DeleteQuestionAndAnswer(ITest test, int number)
         {
+            if (test == null) return false; 
             if (test.DeleteQuestionAndAnswer(number))
                 return true;
             return false;

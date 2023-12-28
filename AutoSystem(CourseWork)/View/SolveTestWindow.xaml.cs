@@ -26,5 +26,21 @@ namespace AutoSystem_CourseWork_.View
             InitializeComponent();
             DataContext = new SolveTestVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
         }
+
+        private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
+        private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
+        private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(dataManager, serviceManager);
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void I_Read_Button_Click(object sender, RoutedEventArgs e)
+        {
+            AnswerQuestionWindow answerQuestionWindow = new AnswerQuestionWindow(dataManager,serviceManager);
+            answerQuestionWindow.Show();
+            this.Close();
+        }
     }
 }

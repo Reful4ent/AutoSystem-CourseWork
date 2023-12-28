@@ -107,9 +107,6 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 
         public bool SetCourse(int index, IDataManager dataManager)
         {
-            //List<ICourse> courses = dataManager.ParticularUser.Courses;
-            //dataManager.ParticularCurse = courses[index];
-            //List<ICourse> courses = dataManager.ParticularUser.Courses;
             dataManager.ParticularCurse = dataManager.ParticularUser.Courses[index];
             if (dataManager.ParticularCurse == null) return false;
             return true;
