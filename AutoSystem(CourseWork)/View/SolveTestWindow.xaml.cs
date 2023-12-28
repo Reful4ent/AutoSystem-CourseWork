@@ -25,6 +25,11 @@ namespace AutoSystem_CourseWork_.View
         {
             InitializeComponent();
             DataContext = new SolveTestVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
+            if(DataContext is SolveTestVM solveTestVM)
+            {
+                solveTestVM.CheckQuestionSucces += OpenQuestionWindow;
+                solveTestVM.CheckQuestionFailed += OpenErrorWindow;
+            }
         }
 
         private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
@@ -36,7 +41,13 @@ namespace AutoSystem_CourseWork_.View
             this.Close();
         }
 
-        private void I_Read_Button_Click(object sender, RoutedEventArgs e)
+        private void OpenErrorWindow(string error)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(error);
+            errorWindow.ShowDialog();
+        }
+
+        private void OpenQuestionWindow()
         {
             AnswerQuestionWindow answerQuestionWindow = new AnswerQuestionWindow(dataManager,serviceManager);
             answerQuestionWindow.Show();

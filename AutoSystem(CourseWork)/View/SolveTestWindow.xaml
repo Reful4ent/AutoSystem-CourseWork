@@ -32,7 +32,7 @@
             </ScrollViewer>
         </Grid>
         <Grid x:Name="Ascept_Theory" Grid.Row="2">
-            <Button x:Name="I_Read_Button" Click="I_Read_Button_Click" Content="Прочитал" Style="{StaticResource ResourceKey=Button_style}"></Button>
+            <Button x:Name="I_Read_Button" Command="{Binding CheckQuestionCommand}" Content="Прочитал" Style="{StaticResource ResourceKey=Button_style}"></Button>
         </Grid>
     </Grid>
 </Window>

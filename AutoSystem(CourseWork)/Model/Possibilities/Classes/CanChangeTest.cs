@@ -22,7 +22,7 @@ namespace AutoSystem_CourseWork_.Model.Possibilities.Classes
 
         public bool DeleteTest(ICourse course, int number)
         {
-            if (course == null) return false;
+            if (course.Tests == null) return false;
             if(course.DeleteTest(number)) return true;
             return false;
         }

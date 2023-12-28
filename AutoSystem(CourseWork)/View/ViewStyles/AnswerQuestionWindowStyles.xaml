@@ -80,4 +80,49 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!--стили надписи регистрации-->
+    <Style x:Key="Title_Text" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Question_Text" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontStyle" Value="Italic"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Red" Offset="0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Cтили текста вопросов-->
+    <Style x:Key="Question_Style" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontStyle" Value="Normal"></Setter>
+        <Setter Property="FontWeight"  Value="Bold"></Setter>
+        <Setter Property="Padding" Value="10"></Setter>
+    </Style>
+
+    <Style x:Key="Answer_Style" TargetType="TextBox">
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontStyle" Value="Normal"></Setter>
+        <Setter Property="FontWeight"  Value="Bold"></Setter>
+        <Setter Property="Padding" Value="10"></Setter>
+    </Style>
 </ResourceDictionary>

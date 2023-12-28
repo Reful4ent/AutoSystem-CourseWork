@@ -46,13 +46,26 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
             return false;
         }
 
-        public bool Update(ICourse coursed)
+        public bool Update(ICourse course)
         {
             for (int i = 0; i < _courses.Count; i++)
             {
-                if (_courses[i].Id == coursed.Id)
+                if (_courses[i].Id == course.Id)
                 {
-                    _courses[i] = coursed;
+                    _courses[i] = course;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool UpdateMyCourse(ICourse course)
+        {
+            for (int i = 0; i < _courses.Count; i++)
+            {
+                if (course.Id == _courses[i].Id)
+                {
+                    course = _courses[i];
                     return true;
                 }
             }

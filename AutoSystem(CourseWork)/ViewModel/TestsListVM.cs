@@ -2,6 +2,7 @@
 using AutoSystem_CourseWork_.ViewModel.DataManager;
 using AutoSystem_CourseWork_.ViewModel.Services;
 using AutoSystem_CourseWork_.ViewModel.Commands;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +21,7 @@ namespace AutoSystem_CourseWork_.ViewModel
         private int index;
 
         public event Action? SetTestSucces;
+        public event Action<string>? SetTestFailed;
         public TestsListVM(IDataManager dataManager, IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
@@ -44,6 +46,10 @@ namespace AutoSystem_CourseWork_.ViewModel
             if(serviceManager.TrySetTest(Index))
             {
                 SetTestSucces?.Invoke();
+            }
+            else
+            {
+                SetTestFailed?.Invoke("Нет тестов!");
             }
         }
 

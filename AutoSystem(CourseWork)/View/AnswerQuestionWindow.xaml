@@ -34,17 +34,24 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock Text="Вопрос"></TextBlock>
+                <TextBlock Text="Вопрос" Style="{StaticResource ResourceKey=Title_Text}" ></TextBlock>
             </Grid>
             <Grid Grid.Column="1">
-                <TextBlock Text=""></TextBlock>
+                <TextBlock Text="{Binding QuestionNumber}" Style="{StaticResource ResourceKey=Title_Text}" Foreground="Black"></TextBlock>
             </Grid>
             <Grid Grid.Column="2">
-                <TextBlock Text="из"></TextBlock>
+                <TextBlock Text="из" Style="{StaticResource ResourceKey=Title_Text}"></TextBlock>
             </Grid>
             <Grid Grid.Column="3">
-                <TextBlock Text=""></TextBlock>
+                <TextBlock Text="{Binding QuestionCount}" Style="{StaticResource ResourceKey=Title_Text}" Foreground="Black"></TextBlock>
             </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <TextBlock Text="{Binding QuestionText}" Style="{StaticResource ResourceKey=Question_Text}" TextWrapping="Wrap"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <TextBox Text="" Style="{StaticResource ResourceKey=Answer_Style}"></TextBox>
         </Grid>
         <Grid x:Name="Answer_Question_Button" Grid.Row="4">
             <Button Content="Ответил" Command="" Style="{StaticResource ResourceKey=Button_style}"></Button>

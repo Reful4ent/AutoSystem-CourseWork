@@ -114,6 +114,7 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
 
         public bool SetTest(int indexTest, IDataManager dataManager)
         {
+            if (dataManager.ParticularCurse.Tests.Count == 0 || dataManager.ParticularCurse.Tests == null) return false; 
             dataManager.ParticularTest = dataManager.ParticularCurse.Tests[indexTest];
             if(dataManager.ParticularTest == null) return false;
             return true;

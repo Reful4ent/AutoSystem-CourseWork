@@ -31,7 +31,8 @@ namespace AutoSystem_CourseWork_.View
             DataContext = new TestsListVM(this.dataManager = dataManager, this.serviceManager = serviceManager);
             if(DataContext is TestsListVM testsListVM)
             {
-                testsListVM.SetTestSucces += OpenSolveTestWindow; 
+                testsListVM.SetTestSucces += OpenSolveTestWindow;
+                testsListVM.SetTestFailed += OpenErrorWindow;
             }
         }
 
@@ -50,6 +51,12 @@ namespace AutoSystem_CourseWork_.View
             MainWindow mainWindow = new MainWindow(dataManager,serviceManager);
             mainWindow.Show();
             this.Close();
+        }
+
+        private void OpenErrorWindow(string error)
+        {
+            ErrorWindow errorWindow = new ErrorWindow(error);
+            errorWindow.ShowDialog();
         }
     }
 }

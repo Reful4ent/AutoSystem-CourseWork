@@ -171,6 +171,17 @@
           }
         ]
       }
+    },
+    {
+      "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
+      "Id": "5d0beed7-b700-4a6a-b240-8c3dfb5c3274",
+      "Name": "yuiyuiuiiuuuuuuuuuuuuuu",
+      "AuthorName": "AdminAdminAdminAdminAdminAdminAdminAdminAdminAdminAdmin",
+      "CourseType": 0,
+      "Tests": {
+        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.ITest, AutoSystem(CourseWork)]], System.Private.CoreLib",
+        "$values": []
+      }
     }
   ]
 }

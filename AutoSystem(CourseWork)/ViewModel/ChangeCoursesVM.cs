@@ -156,7 +156,11 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void DeleteCourse()
         {
-            if(serviceManager.TryDeleteCourse(IndexCourse))
+            if(IndexCourse == -1)
+            {
+                DeleteCourseFailed?.Invoke("Ошибка при удалении!");
+            }
+            else if(serviceManager.TryDeleteCourse(IndexCourse))
             {
                 DeleteCourseSucces?.Invoke();
             }
@@ -179,8 +183,12 @@ namespace AutoSystem_CourseWork_.ViewModel
         }
 
         private void DeleteQuestion()
-        {
-            if (serviceManager.TryDeleteQuestion(CoursesList[indexCourse], TestsList[IndexTest], IndexQuestion))
+        { 
+            if(IndexTest==-1)
+            {
+                DeleteQuestionFailed?.Invoke("Ошибка при удалении");
+            }
+            else if (serviceManager.TryDeleteQuestion(CoursesList[indexCourse], TestsList[IndexTest], IndexQuestion))
             {
                 DeleteQuestionSucces?.Invoke();
             }
