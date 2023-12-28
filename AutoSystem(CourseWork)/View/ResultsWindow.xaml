@@ -1,0 +1,25 @@
+﻿<Window x:Class="AutoSystem_CourseWork_.View.ResultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoSystem_CourseWork_.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ResultsWindow" Height="250" Width="400" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <ResourceDictionary Source="/AutoSystem(CourseWork);component/View/ViewStyles/ResultsWindowStyles.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Results_Text" Grid.Row="0">
+            <TextBlock x:Name="Results_Textblock" Style="{StaticResource ResourceKey=Results_Style}"></TextBlock>
+        </Grid>
+        <Grid x:Name="Button_End" Grid.Row="1">
+            <Button x:Name="End_Test_Button" Content="Понял" Click="End_Test_Button_Click" Style="{StaticResource ResourceKey=Button_style}"></Button>
+        </Grid>
+    </Grid>
+</Window>

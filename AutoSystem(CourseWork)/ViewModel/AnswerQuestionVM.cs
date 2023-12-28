@@ -18,6 +18,8 @@ namespace AutoSystem_CourseWork_.ViewModel
         private int questionNumber;
         private int questionCount;
 
+        public event Action<int, int>? AnswerQuestionCompleted;
+
         public AnswerQuestionVM(IDataManager dataManager, IServiceManager serviceManager)
         {
             this.dataManager = dataManager;
@@ -26,7 +28,6 @@ namespace AutoSystem_CourseWork_.ViewModel
             QuestionText = dataManager.ParticularTest.questions[0].Text;
             QuestionIndex = 0;
             QuestionNumber = QuestionIndex + 1; 
-
         }
 
         public string QuestionText
@@ -53,6 +54,11 @@ namespace AutoSystem_CourseWork_.ViewModel
         {
             get => questionCount; 
             set => Set(ref questionCount, value);
+        }
+
+        public void StartAnswering()
+        {
+
         }
     }
 }

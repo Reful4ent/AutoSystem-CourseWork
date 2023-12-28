@@ -31,6 +31,9 @@
     <Compile Update="View\RegistrationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ResultsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SolveTestWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -66,6 +69,9 @@
     <Page Update="View\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ResultsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\SolveTestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -94,6 +100,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\RegistrationStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ViewStyles\ResultsWindowStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ViewStyles\SolveTestWindowStyles.xaml">

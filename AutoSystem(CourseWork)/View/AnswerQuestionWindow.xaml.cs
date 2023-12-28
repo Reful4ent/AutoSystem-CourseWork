@@ -28,17 +28,18 @@ namespace AutoSystem_CourseWork_.View
         {
             InitializeComponent();
             DataContext = new AnswerQuestionVM (this.dataManager = dataManager,this.serviceManager = serviceManager);
+            if(DataContext is AnswerQuestionVM answerQuestionVM)
+            {
+                answerQuestionVM.AnswerQuestionCompleted += OpenResultationWindow;
+            }
         }
-
-        private void Minimize_MouseDown(object sender, MouseButtonEventArgs e)
+        private void OpenResultationWindow(int results, int count)
         {
 
         }
+        private void Minimize_MouseDown(object sender, MouseButtonEventArgs e) => this.DragMove();
 
-        private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+        private void Navbar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.WindowState = WindowState.Minimized;
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
         {
