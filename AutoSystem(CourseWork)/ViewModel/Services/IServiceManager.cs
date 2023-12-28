@@ -30,5 +30,7 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
         public bool TryAddAnswerQuestion(int numberCourse, int numberTest, string questionText, string answerText, CourseTypeEnum courseTypeEnum);
         public bool TrySetCourse(int index);
         public bool TrySetTest(int index);
+
+        public List<ICourse> CheckUpdates();
     }
 }

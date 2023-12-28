@@ -59,6 +59,14 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
             return false;
         }
 
+        public bool FindCourse(ICourse course)
+        {
+            var CheckSimilary = from selectCourse in _courses
+                                where (course.Id == selectCourse.Id)
+                                select course;
+            if (CheckSimilary.Count() == 0) return false;
+            return true;
+        }
         public bool UpdateMyCourse(ICourse course)
         {
             for (int i = 0; i < _courses.Count; i++)

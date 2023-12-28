@@ -121,7 +121,7 @@
     },
     {
       "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
-      "Id": "25887355-a734-4137-a45a-cd22dd7d9957",
+      "Id": "b082e03c-3be7-402d-a8df-aefadb21a9bc",
       "Name": "Фундаментальная физика",
       "AuthorName": "Teacher",
       "CourseType": 2,
@@ -130,7 +130,7 @@
         "$values": [
           {
             "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.TestOfCourse, AutoSystem(CourseWork)",
-            "Id": "2b21ce9c-d0d6-46e1-aa35-2195d343341e",
+            "Id": "3e742190-758e-48bf-8c0c-de8f09758c50",
             "Name": "Механика и термодинамика",
             "Theory": "Равномерное движение.  скорость такого движения на любом измеряемом отрезке одинакова, ускорение или замедление отсутствует. Напомним, что скорость (она обозначается буквой V) характеризует «быстроту» совершения движения. Она равна отношению пути S, пройденного материальной точкой, ко времени прохождения t.Для её определения используется формула: V=S/t\r\n\r\nМолекулярная физика.Если тело однородно, а теплоемкость считают независимой от температуры, то количество теплоты (dQ), которое получает тело при увеличении его температуры на величину (dT=T1-T2)можно вычислить как:\r\ndQ = c*m*dT\r\nгде T2, T1 температуры тела до нагрева и после. Обратите внимание, что температуры при нахождении разности (dT) в расчетах можно подставлять как в градусах Цельсия, так и в кельвинах.\r\n",
             "CourseType": 2,
@@ -139,13 +139,13 @@
               "$values": [
                 {
                   "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
-                  "Id": "832c9d90-5bf9-4fdf-8efc-9ce7b1a22657",
+                  "Id": "dcb91c6e-99b1-4d0a-b872-586225e80e6b",
                   "Text": "20",
                   "CourseType": 2
                 },
                 {
                   "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Answers.TextAnswer, AutoSystem(CourseWork)",
-                  "Id": "ce35a2c3-e234-4af2-a0c7-17662fdd7cd7",
+                  "Id": "bd54190c-b47e-45a9-a171-9310ff0b8341",
                   "Text": "6",
                   "CourseType": 2
                 }
@@ -156,13 +156,13 @@
               "$values": [
                 {
                   "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
-                  "Id": "832c9d90-5bf9-4fdf-8efc-9ce7b1a22657",
+                  "Id": "dcb91c6e-99b1-4d0a-b872-586225e80e6b",
                   "Text": "Какова скорость автомобиля, если за 30 минут он проехал 36 км?\nОтвет дать в м/с",
                   "CourseType": 2
                 },
                 {
                   "$type": "AutoSystem_CourseWork_.Model.Сourse.Test.Questions.TextQuestion, AutoSystem(CourseWork)",
-                  "Id": "ce35a2c3-e234-4af2-a0c7-17662fdd7cd7",
+                  "Id": "bd54190c-b47e-45a9-a171-9310ff0b8341",
                   "Text": "На сколько градусов нагреется вода объемом V  =  2 л, если ей сообщить количество теплоты Q  =  50,4 кДж?",
                   "CourseType": 2
                 }
@@ -170,17 +170,6 @@
             }
           }
         ]
-      }
-    },
-    {
-      "$type": "AutoSystem_CourseWork_.Model.Сourse.Course, AutoSystem(CourseWork)",
-      "Id": "5d0beed7-b700-4a6a-b240-8c3dfb5c3274",
-      "Name": "yuiyuiuiiuuuuuuuuuuuuuu",
-      "AuthorName": "AdminAdminAdminAdminAdminAdminAdminAdminAdminAdminAdmin",
-      "CourseType": 0,
-      "Tests": {
-        "$type": "System.Collections.Generic.List`1[[AutoSystem_CourseWork_.Model.Сourse.Test.ITest, AutoSystem(CourseWork)]], System.Private.CoreLib",
-        "$values": []
       }
     }
   ]

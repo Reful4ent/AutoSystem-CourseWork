@@ -35,7 +35,7 @@ namespace AutoSystem_CourseWork_.ViewModel
             Name = this.dataManager.ParticularUser.Name;
             Role_Id = this.dataManager.ParticularUser.Role_Id;
             Role = UserRole.GetName(typeof(UserRole), (UserRole)(this.dataManager.ParticularUser.Role_Id));
-            Courses = new ObservableCollection<ICourse>(this.dataManager.ParticularUser.Courses);
+            Courses = new ObservableCollection<ICourse>(serviceManager.CheckUpdates());
         }
 
         public string Name
@@ -75,7 +75,11 @@ namespace AutoSystem_CourseWork_.ViewModel
 
         private void DeleteUserCourse()
         {
-            if (serviceManager.TryRemoveUserCourse(Index))
+            if(Index == -1)
+            {
+                DeleteFailed?.Invoke("Не удалось удалить курс!");
+            }
+            else if (serviceManager.TryRemoveUserCourse(Index))
             {
                 DeleteSucces?.Invoke();
             }
@@ -87,7 +91,11 @@ namespace AutoSystem_CourseWork_.ViewModel
         
         private void SetCourse()
         {
-            if (serviceManager.TrySetCourse(Index))
+            if(Index == -1)
+            {
+                return;
+            }
+            else if (serviceManager.TrySetCourse(Index))
             {
                 SetCourseSucces?.Invoke();
             }

@@ -113,5 +113,10 @@ namespace AutoSystem_CourseWork_.ViewModel.Services
         {
             return testQuestionServices.SetTest(index, dataManager);
         }
+
+        public List<ICourse> CheckUpdates()
+        {
+            return testQuestionServices.CheckUpdates(dataManager);
+        }
     }
 }
