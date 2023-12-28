@@ -67,17 +67,17 @@ namespace AutoSystem_CourseWork_.Data.CoursesSerialization
             if (CheckSimilary.Count() == 0) return false;
             return true;
         }
-        public bool UpdateMyCourse(ICourse course)
+        public ICourse UpdateMyCourse(ICourse course)
         {
             for (int i = 0; i < _courses.Count; i++)
             {
                 if (course.Id == _courses[i].Id)
                 {
                     course = _courses[i];
-                    return true;
+                    return course;
                 }
             }
-            return false;
+            return null;
         }
 
         public bool Save()

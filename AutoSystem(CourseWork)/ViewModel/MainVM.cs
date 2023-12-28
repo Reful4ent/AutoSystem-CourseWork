@@ -73,6 +73,19 @@ namespace AutoSystem_CourseWork_.ViewModel
             Courses = new ObservableCollection<ICourse>(this.dataManager.ParticularUser.Courses);
         }
 
+        public List<ICourse> CheckUpdates()
+        {
+            for (int i = 0; i < dataManager.ParticularUser.Courses.Count; i++)
+            {
+                dataManager.CoursesRepository.UpdateMyCourse(dataManager.ParticularUser.Courses[i]);
+                if (!dataManager.CoursesRepository.FindCourse(dataManager.ParticularUser.Courses[i]))
+                    dataManager.ParticularUser.RemoveMeCourse(i);
+                dataManager.UserRepository.Update(dataManager.ParticularUser);
+                dataManager.UserRepository.Save();
+            }
+            return dataManager.ParticularUser.Courses;
+        }
+
         private void DeleteUserCourse()
         {
             if(Index == -1)

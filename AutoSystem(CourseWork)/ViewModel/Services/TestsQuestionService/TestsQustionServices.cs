@@ -153,12 +153,12 @@ namespace AutoSystem_CourseWork_.ViewModel.Services.TestsService
         {
             for (int i = 0; i < dataManager.ParticularUser.Courses.Count; i++)
             {
-                dataManager.CoursesRepository.UpdateMyCourse(dataManager.ParticularUser.Courses[i]);
+                dataManager.ParticularUser.Courses[i] = dataManager.CoursesRepository.UpdateMyCourse(dataManager.ParticularUser.Courses[i]);
                 if (!dataManager.CoursesRepository.FindCourse(dataManager.ParticularUser.Courses[i]))
                     dataManager.ParticularUser.RemoveMeCourse(i);
                 dataManager.UserRepository.Update(dataManager.ParticularUser);
-                dataManager.UserRepository.Save();
             }
+            dataManager.UserRepository.Save();
             return dataManager.ParticularUser.Courses;
         }
     }
