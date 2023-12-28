@@ -15,7 +15,7 @@ namespace AutoSystem_CourseWork_.Model.Сourse.Test.Questions
         public TextQuestion(Guid id, string text, CourseTypeEnum courseType)
         {
             if (Id == null)
-                throw new ArgumentNullException("Айди не может быть пустым");
+                throw new ArgumentException("Айди не может быть пустым");
             Id = id;
             if (String.IsNullOrEmpty(text) || String.IsNullOrWhiteSpace(text))
                 throw new ArgumentException("Пустое поле вопроса");
